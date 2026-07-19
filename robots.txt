@@ -15,7 +15,7 @@ Disallow: /*?q=
 Disallow: /search
 Disallow: /search.html
 
-Sitemap: https://www.iptvproguide.com/sitemap.xml
+Sitemap: https://iptvproguide.netlify.app/sitemap.xml
 Crawl-delay: 1
 
 User-agent: Googlebot

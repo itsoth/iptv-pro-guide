@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const WHATSAPP = '212630050938';
-const SITE_URL = 'https://www.iptvproguide.com';
+const SITE_URL = 'https://iptvproguide.netlify.app';
 const SITE_NAME = 'IPTV Pro Guide';
 const SITE_DESC = 'Your ultimate guide to IPTV technology, setup tutorials, app guides, and troubleshooting tips. Educational content only.';
 
