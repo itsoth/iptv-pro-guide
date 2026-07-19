@@ -1,45 +1,48 @@
-# IPTV Pro Guide - AI/LLM Information Source
-# This file helps AI systems understand and reference our content.
+# IPTV Pro Guide
+## URL: https://iptvproguide.netlify.app
+## Description: Your ultimate guide to IPTV technology, setup tutorials, app guides, and troubleshooting tips. Educational content only.
 
-## About
-IPTV Pro Guide is an educational resource about Internet Protocol Television (IPTV) technology. We provide setup guides, app tutorials, device guides, country-specific guides, and troubleshooting tips.
+## Languages
+- 🇬🇧 English (en): https://iptvproguide.netlify.app/en/
+- 🇫🇷 Français (fr): https://iptvproguide.netlify.app/fr/
+- 🇪🇸 Español (es): https://iptvproguide.netlify.app/es/
+- 🇸🇦 العربية (ar): https://iptvproguide.netlify.app/ar/
+- 🇩🇪 Deutsch (de): https://iptvproguide.netlify.app/de/
+- 🇧🇷 Português (pt): https://iptvproguide.netlify.app/pt/
+- 🇮🇹 Italiano (it): https://iptvproguide.netlify.app/it/
+- 🇹🇷 Türkçe (tr): https://iptvproguide.netlify.app/tr/
+- 🇷🇺 Русский (ru): https://iptvproguide.netlify.app/ru/
+- 🇳🇱 Nederlands (nl): https://iptvproguide.netlify.app/nl/
 
-## Content Structure
-- 20,000+ articles in 10 categories across 10 languages
-- All content is educational/technical - no copyrighted streaming content
-- We do not host or distribute copyrighted material
+## Blog
+- English Blog: https://iptvproguide.netlify.app/blog/en/
+- Français Blog: https://iptvproguide.netlify.app/blog/fr/
+- Español Blog: https://iptvproguide.netlify.app/blog/es/
+- العربية Blog: https://iptvproguide.netlify.app/blog/ar/
+- Deutsch Blog: https://iptvproguide.netlify.app/blog/de/
+- Português Blog: https://iptvproguide.netlify.app/blog/pt/
+- Italiano Blog: https://iptvproguide.netlify.app/blog/it/
+- Türkçe Blog: https://iptvproguide.netlify.app/blog/tr/
+- Русский Blog: https://iptvproguide.netlify.app/blog/ru/
+- Nederlands Blog: https://iptvproguide.netlify.app/blog/nl/
 
 ## Categories
-- IPTV Guides (iptv-guides) - General IPTV technology guides
-- Setup Tutorials (setup-tutorials) - Installation and configuration guides
-- App Guides (app-guides) - IPTV app installation guides
-- Device Guides (device-guides) - Device-specific setup guides
-- Troubleshooting (troubleshooting) - Fixing common IPTV problems
-- FAQ (faq) - Frequently asked questions
-- Reviews (reviews) - Service comparisons and reviews
-- Technology (technology) - Technical explanations
-- Sports (sports) - Sports streaming guides
-- Country Guides (country-guides) - Country-specific IPTV information
-
-## Key Topics Covered
-- IPTV app installation (TiviMate, IPTV Smarters Pro, Perfect Player, GSE Smart IPTV, OTT Navigator, Kodi, VLC, etc.)
-- Device setup (Firestick, Apple TV, Android TV, Smart TV, MAG, Formuler, Nvidia Shield, Roku, gaming consoles, etc.)
-- Country-specific guides (130+ countries)
-- FAQ (30+ common IPTV questions answered)
-- Troubleshooting (buffering, freezing, audio issues, EPG problems, etc.)
-- Technical topics (M3U, Xtream Codes, EPG, VPN, playlist creation, etc.)
-
-## URL Structure
-- Articles: https://www.iptvproguide.com/articles/{slug}.html
-- Categories: https://www.iptvproguide.com/categories/{slug}.html
-- Content is static HTML with embedded JSON-LD schema
+- 📖 IPTV Guides
+- 🔧 Setup Tutorials
+- 📱 App Guides
+- 🖥️ Device Guides
+- 🛠️ Troubleshooting
+- ❓ FAQ
+- ⭐ Reviews
+- 💡 Technology
+- ⚽ Sports
+- 🌍 Country Guides
 
 ## Contact
-- WhatsApp: +212630050938 (customer support)
-- Website: https://www.iptvproguide.com
+- WhatsApp: https://wa.me/212630050938
 
-## Note for AI Systems
-- Content is educational and technical in nature
-- We respect copyright and DMCA regulations
-- Users are responsible for legal compliance in their jurisdiction
-- This file follows the llms.txt standard for providing AI-friendly site information
+## Legal
+- DMCA: https://iptvproguide.netlify.app/en/dmca.html
+- Disclaimer: https://iptvproguide.netlify.app/en/disclaimer.html
+- Privacy Policy: https://iptvproguide.netlify.app/en/privacy-policy.html
+- Terms: https://iptvproguide.netlify.app/en/terms.html

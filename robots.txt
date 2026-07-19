@@ -1,17 +1,7 @@
 # IPTV Pro Guide - Robots.txt
 User-agent: *
 Allow: /
-Allow: /articles/
-Allow: /categories/
-Allow: /about.html
-Allow: /contact.html
-Allow: /privacy-policy.html
-Allow: /terms.html
-Allow: /dmca.html
-Allow: /disclaimer.html
 Disallow: /assets/
-Disallow: /articles/articles.json
-Disallow: /*?q=
 Disallow: /search
 Disallow: /search.html
 
@@ -21,7 +11,6 @@ Crawl-delay: 1
 User-agent: Googlebot
 Allow: /
 Disallow: /assets/
-Disallow: /*?q=
 Disallow: /search
 
 User-agent: Googlebot-Image
@@ -33,7 +22,6 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 Disallow: /assets/
-Disallow: /*?q=
 Disallow: /search
 
 User-agent: GPTBot
@@ -47,3 +35,14 @@ Disallow: /
 
 User-agent: ImagesiftBot
 Disallow: /
+
+Sitemap: https://iptvproguide.netlify.app/rss-en.xml
+Sitemap: https://iptvproguide.netlify.app/rss-fr.xml
+Sitemap: https://iptvproguide.netlify.app/rss-es.xml
+Sitemap: https://iptvproguide.netlify.app/rss-ar.xml
+Sitemap: https://iptvproguide.netlify.app/rss-de.xml
+Sitemap: https://iptvproguide.netlify.app/rss-pt.xml
+Sitemap: https://iptvproguide.netlify.app/rss-it.xml
+Sitemap: https://iptvproguide.netlify.app/rss-tr.xml
+Sitemap: https://iptvproguide.netlify.app/rss-ru.xml
+Sitemap: https://iptvproguide.netlify.app/rss-nl.xml
