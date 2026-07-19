@@ -628,7 +628,7 @@ ${langLinks}
 <script type="application/ld+json">${schemaFAQ}</script>
 <script type="application/ld+json">${schemaWebSite}</script>
 <script type="application/ld+json">${schemaOrg}</script>
-<style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0f0f23;color:#e0e0e0;line-height:1.7;margin:0;padding:0}.container{max-width:1200px;margin:0 auto;padding:0 20px}.header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:15px 0;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.05)}.header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}.logo{font-size:28px;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}.logo span{color:#00c853}.nav{display:flex;gap:25px;flex-wrap:wrap}.nav a{color:#ccc;text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;text-transform:uppercase;letter-spacing:1px}.nav a:hover,.nav a.active{color:#00c853}.lang-switch{display:flex;gap:5px;flex-wrap:wrap}.lang-switch a{padding:4px 10px;border-radius:4px;font-size:12px;font-weight:600;text-decoration:none;color:#aaa;border:1px solid #333;transition:all .3s}.lang-switch a.active,.lang-switch a:hover{color:#fff;border-color:#00c853;background:rgba(0,200,83,0.1)}.breadcrumb{padding:15px 0;font-size:13px;color:#888}.breadcrumb a{color:#00c853;text-decoration:none}.content-area{min-height:400px;padding:40px 0}.two-col{display:grid;grid-template-columns:1fr 300px;gap:30px}.article-content{background:linear-gradient(135deg,#1e1e3a,#16213e);border-radius:12px;padding:40px;border:1px solid rgba(255,255,255,0.05)}.article-content h1{font-size:32px;color:#fff;margin-bottom:20px}.article-content h2{font-size:24px;color:#fff;margin:30px 0 15px}.article-content h3{font-size:20px;color:#fff;margin:25px 0 12px}.article-content p{color:#bbb;margin-bottom:15px;font-size:16px;line-height:1.8}.article-content ul,.article-content li{color:#bbb;margin-bottom:8px}.article-content a{color:#00c853}.article-content blockquote{border-left:4px solid #00c853;padding:15px 20px;margin:20px 0;background:rgba(0,200,83,0.05);border-radius:0 8px 8px 0}.card-meta{display:flex;gap:15px;flex-wrap:wrap;color:#888;font-size:13px}.card-meta a{color:#00c853;text-decoration:none}.sidebar{background:linear-gradient(135deg,#1e1e3a,#16213e);border-radius:12px;padding:25px;margin-bottom:25px;border:1px solid rgba(255,255,255,0.05)}.sidebar h3{color:#fff;font-size:16px;margin-bottom:15px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.1)}.sidebar ul{list-style:none;padding:0;margin:0}.sidebar ul li{margin-bottom:8px}.sidebar ul li a{color:#00c853;text-decoration:none;font-size:14px}.sidebar ul li a:hover{text-decoration:underline}.tag-cloud-sidebar{display:flex;flex-wrap:wrap;gap:6px}.tag-cloud-sidebar a{padding:3px 10px;background:rgba(0,200,83,0.1);color:#00c853;border-radius:20px;font-size:11px;text-decoration:none;transition:all .3s}.tag-cloud-sidebar a:hover{background:rgba(0,200,83,0.2)}.newsletter-form{display:flex;gap:8px}.newsletter-form input{flex:1;padding:10px;border-radius:6px;border:1px solid #333;background:#0f0f23;color:#fff;font-size:13px}.newsletter-form button{padding:10px 16px;background:#00c853;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:600}.disclaimer-box{background:rgba(255,193,7,0.1);border:1px solid rgba(255,193,7,0.2);border-radius:8px;padding:15px;margin-top:30px;font-size:13px;color:#aaa}.disclaimer-box a{color:#ffc107}.footer{background:#0f0f23;padding:50px 0 20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px}.footer h4{color:#fff;font-size:16px;margin-bottom:15px}.footer p{color:#888;font-size:13px;line-height:1.6}.footer a{display:block;color:#888;text-decoration:none;font-size:13px;margin-bottom:8px;transition:color .3s}.footer a:hover{color:#00c853}.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-bottom p{color:#666;font-size:12px}.whatsapp-float{position:fixed;bottom:20px;right:20px;z-index:999}.whatsapp-float a{display:flex;align-items:center;justify-content:center;width:56px;height:56px;background:#25d366;border-radius:50%;color:#fff;box-shadow:0 4px 12px rgba(37,211,102,0.4);transition:all .3s}.whatsapp-float a:hover{transform:scale(1.1)}.tooltip{position:absolute;right:70px;top:50%;transform:translateY(-50%);background:#333;color:#fff;padding:8px 16px;border-radius:8px;font-size:13px;white-space:nowrap;opacity:0;transition:opacity .3s;pointer-events:none}.whatsapp-float:hover .tooltip{opacity:1}.whatsapp-popup{position:fixed;bottom:90px;right:20px;width:320px;background:#fff;border-radius:12px;box-shadow:0 5px 40px rgba(0,0,0,0.3);z-index:1000;display:none;overflow:hidden}.whatsapp-popup.show{display:block}.whatsapp-popup-header{background:#075e54;color:#fff;padding:15px;display:flex;align-items:center;gap:10px}.whatsapp-popup-header img{width:40px;height:40px;border-radius:50%}.whatsapp-popup-header h4{margin:0;font-size:14px}.whatsapp-popup-header p{margin:0;font-size:11px;color:#ccc}.whatsapp-popup-body{background:#e5ddd5;padding:15px;min-height:100px}.whatsapp-popup-body .msg{background:#fff;padding:10px 15px;border-radius:8px;margin-bottom:10px;font-size:13px;color:#333;max-width:80%}.whatsapp-popup-body .msg.reply{background:#dcf8c6;margin-left:auto}.whatsapp-popup-footer{display:flex;padding:10px;border-top:1px solid #eee;background:#fff}.whatsapp-popup-footer input{flex:1;padding:10px;border:1px solid #ddd;border-radius:20px;outline:none;font-size:13px}.whatsapp-popup-footer button{padding:10px 20px;background:#25d366;color:#fff;border:none;border-radius:20px;margin-left:8px;cursor:pointer;font-weight:600}.cookie-consent{position:fixed;bottom:0;left:0;right:0;background:#1a1a3e;padding:15px 0;z-index:9999;display:none;border-top:1px solid rgba(255,255,255,0.1)}.cookie-consent.show{display:block}.cookie-consent .container{display:flex;align-items:center;justify-content:space-between;gap:20px}.cookie-consent p{color:#aaa;font-size:13px;margin:0}.btn-cookie{padding:8px 24px;background:#00c853;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:600;white-space:nowrap}.back-to-top{position:fixed;bottom:90px;right:20px;width:44px;height:44px;background:#00c853;color:#fff;border:none;border-radius:50%;cursor:pointer;font-size:20px;display:none;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,200,83,0.3);z-index:998}.back-to-top.show{display:flex}@media(max-width:768px){.two-col{grid-template-columns:1fr}.header .container{flex-direction:column;text-align:center}.nav{justify-content:center;gap:15px}.lang-switch{justify-content:center}.article-content{padding:20px}.article-content h1{font-size:24px}.article-content h2{font-size:20px}}</style>
+<style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0f0f23;color:#e0e0e0;line-height:1.7;margin:0;padding:0}.container{max-width:1200px;margin:0 auto;padding:0 20px}.header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:15px 0;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.05)}.header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}.logo{font-size:28px;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}.logo span{color:#00c853}.nav{display:flex;gap:25px;flex-wrap:wrap}.nav a{color:#ccc;text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;text-transform:uppercase;letter-spacing:1px}.nav a:hover,.nav a.active{color:#00c853}.lang-switch{display:flex;gap:5px;flex-wrap:wrap}.lang-switch a{padding:4px 10px;border-radius:4px;font-size:12px;font-weight:600;text-decoration:none;color:#aaa;border:1px solid #333;transition:all .3s}.lang-switch a.active,.lang-switch a:hover{color:#fff;border-color:#00c853;background:rgba(0,200,83,0.1)}.breadcrumb{padding:15px 0;font-size:13px;color:#888}.breadcrumb a{color:#00c853;text-decoration:none}.content-area{min-height:400px;padding:40px 0}.two-col{display:grid;grid-template-columns:1fr 300px;gap:30px}.article-content{background:linear-gradient(135deg,#1e1e3a,#16213e);border-radius:12px;padding:40px;border:1px solid rgba(255,255,255,0.05)}.article-content h1{font-size:32px;color:#fff;margin-bottom:20px}.article-content h2{font-size:24px;color:#fff;margin:30px 0 15px}.article-content h3{font-size:20px;color:#fff;margin:25px 0 12px}.article-content p{color:#bbb;margin-bottom:15px;font-size:16px;line-height:1.8}.article-content ul,.article-content li{color:#bbb;margin-bottom:8px}.article-content a{color:#00c853}.article-content blockquote{border-left:4px solid #00c853;padding:15px 20px;margin:20px 0;background:rgba(0,200,83,0.05);border-radius:0 8px 8px 0}.card-meta{display:flex;gap:15px;flex-wrap:wrap;color:#888;font-size:13px}.card-meta a{color:#00c853;text-decoration:none}.sidebar{background:linear-gradient(135deg,#1e1e3a,#16213e);border-radius:12px;padding:25px;margin-bottom:25px;border:1px solid rgba(255,255,255,0.05)}.sidebar h2{color:#fff;font-size:16px;margin-bottom:15px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.1)}.sidebar ul{list-style:none;padding:0;margin:0}.sidebar ul li{margin-bottom:8px}.sidebar ul li a{color:#00c853;text-decoration:none;font-size:14px}.sidebar ul li a:hover{text-decoration:underline}.tag-cloud-sidebar{display:flex;flex-wrap:wrap;gap:6px}.tag-cloud-sidebar a{padding:3px 10px;background:rgba(0,200,83,0.1);color:#00c853;border-radius:20px;font-size:11px;text-decoration:none;transition:all .3s}.tag-cloud-sidebar a:hover{background:rgba(0,200,83,0.2)}.newsletter-form{display:flex;gap:8px}.newsletter-form input{flex:1;padding:10px;border-radius:6px;border:1px solid #333;background:#0f0f23;color:#fff;font-size:13px}.newsletter-form button{padding:10px 16px;background:#00c853;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:600}.disclaimer-box{background:rgba(255,193,7,0.1);border:1px solid rgba(255,193,7,0.2);border-radius:8px;padding:15px;margin-top:30px;font-size:13px;color:#aaa}.disclaimer-box a{color:#ffc107}.footer{background:#0f0f23;padding:50px 0 20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px}.footer h2{color:#fff;font-size:16px;margin-bottom:15px}.footer p{color:#888;font-size:13px;line-height:1.6}.footer a{display:block;color:#888;text-decoration:none;font-size:13px;margin-bottom:8px;transition:color .3s}.footer a:hover{color:#00c853}.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-bottom p{color:#666;font-size:12px}.whatsapp-float{position:fixed;bottom:20px;right:20px;z-index:999}.whatsapp-float a{display:flex;align-items:center;justify-content:center;width:56px;height:56px;background:#25d366;border-radius:50%;color:#fff;box-shadow:0 4px 12px rgba(37,211,102,0.4);transition:all .3s}.whatsapp-float a:hover{transform:scale(1.1)}.tooltip{position:absolute;right:70px;top:50%;transform:translateY(-50%);background:#333;color:#fff;padding:8px 16px;border-radius:8px;font-size:13px;white-space:nowrap;opacity:0;transition:opacity .3s;pointer-events:none}.whatsapp-float:hover .tooltip{opacity:1}.whatsapp-popup{position:fixed;bottom:90px;right:20px;width:320px;background:#fff;border-radius:12px;box-shadow:0 5px 40px rgba(0,0,0,0.3);z-index:1000;display:none;overflow:hidden}.whatsapp-popup.show{display:block}.whatsapp-popup-header{background:#075e54;color:#fff;padding:15px;display:flex;align-items:center;gap:10px}.whatsapp-popup-header h4{margin:0;font-size:14px}.whatsapp-popup-header p{margin:0;font-size:11px;color:#ccc}.whatsapp-popup-body{background:#e5ddd5;padding:15px;min-height:100px}.whatsapp-popup-body .msg{background:#fff;padding:10px 15px;border-radius:8px;margin-bottom:10px;font-size:13px;color:#333;max-width:80%}.whatsapp-popup-body .msg.reply{background:#dcf8c6;margin-left:auto}.whatsapp-popup-footer{display:flex;padding:10px;border-top:1px solid #eee;background:#fff}.whatsapp-popup-footer input{flex:1;padding:10px;border:1px solid #ddd;border-radius:20px;outline:none;font-size:13px}.whatsapp-popup-footer button{padding:10px 20px;background:#25d366;color:#fff;border:none;border-radius:20px;margin-left:8px;cursor:pointer;font-weight:600}.cookie-consent{position:fixed;bottom:0;left:0;right:0;background:#1a1a3e;padding:15px 0;z-index:9999;display:none;border-top:1px solid rgba(255,255,255,0.1)}.cookie-consent.show{display:block}.cookie-consent .container{display:flex;align-items:center;justify-content:space-between;gap:20px}.cookie-consent p{color:#aaa;font-size:13px;margin:0}.btn-cookie{padding:8px 24px;background:#00c853;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:600;white-space:nowrap}.back-to-top{position:fixed;bottom:90px;right:20px;width:44px;height:44px;background:#00c853;color:#fff;border:none;border-radius:50%;cursor:pointer;font-size:20px;display:none;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,200,83,0.3);z-index:998}.back-to-top.show{display:flex}@media(max-width:768px){.two-col{grid-template-columns:1fr}.header .container{flex-direction:column;text-align:center}.nav{justify-content:center;gap:15px}.lang-switch{justify-content:center}.article-content{padding:20px}.article-content h1{font-size:24px}.article-content h2{font-size:20px}}</style>
 </head>
 <body>
 <header class="header">
@@ -653,6 +653,7 @@ ${LANGUAGES.map(l => `<a href="/${l.code}/${slug}.html" data-lang="${l.code}"${l
 </div>
 </section>
 
+<main>
 <section class="content-area">
 <div class="container">
 <div class="two-col">
@@ -671,42 +672,42 @@ ${content}
 </div>
 <aside>
 <div class="sidebar">
-<h3>📂 Category</h3>
+<h2>📂 Category</h2>
 <ul>
 <li><a href="/${langCode}/categories/${category.slug}.html">${category.icon} ${category.name}</a></li>
 </ul>
 </div>
 <div class="sidebar">
-<h3>🌍 Country Guide</h3>
+<h2>🌍 Country Guide</h2>
 <ul>
 <li><a href="/${langCode}/${slugify(`Best IPTV Service Provider in ${country.name}`)}-1.html">🇲🇦 IPTV in ${country.name}</a></li>
 </ul>
 </div>
 <div class="sidebar">
-<h3>📱 Recommended App</h3>
+<h2>📱 Recommended App</h2>
 <ul>
 <li><a href="/${langCode}/${slugify(`How to Install ${app} on Any Device`)}-1.html">📥 Install ${app}</a></li>
 </ul>
 </div>
 <div class="sidebar">
-<h3>🖥️ Device Setup</h3>
+<h2>🖥️ Device Setup</h2>
 <ul>
 <li><a href="/${langCode}/${slugify(`How to Set Up IPTV on ${device}`)}-1.html">🔧 Setup ${device}</a></li>
 </ul>
 </div>
 <div class="sidebar">
-<h3>🏷️ Tags</h3>
+<h2>🏷️ Tags</h2>
 <div class="tag-cloud-sidebar">
 ${keywordStr.split(', ').slice(0, 20).map(k => `<a href="/${langCode}/search.html?q=${encodeURIComponent(k)}">${k}</a>`).join('')}
 </div>
 </div>
 <div class="sidebar">
-<h3>💬 Need Help?</h3>
+<h2>💬 Need Help?</h2>
 <p style="color:#888;font-size:13px;margin-bottom:12px">Contact us on WhatsApp for instant support and the best IPTV deals.</p>
 <a href="https://wa.me/${WHATSAPP}?text=Hi%21%20I%20need%20help%20with%20${encodeURIComponent(title.substring(0, 60))}" target="_blank" style="display:block;padding:12px;background:#25d366;color:white;border-radius:8px;text-decoration:none;font-weight:600;text-align:center">💬 WhatsApp Support</a>
 </div>
 <div class="sidebar">
-<h3>📧 Newsletter</h3>
+<h2>📧 Newsletter</h2>
 <p style="color:#888;font-size:13px;margin-bottom:12px">Get the latest IPTV guides and tips</p>
 <form class="newsletter-form">
 <input type="email" placeholder="Your email" required>
@@ -721,10 +722,10 @@ ${keywordStr.split(', ').slice(0, 20).map(k => `<a href="/${langCode}/search.htm
 <footer class="footer">
 <div class="container">
 <div class="footer-grid">
-<div><h4>${SITE_NAME}</h4><p>Your trusted source for IPTV guides, tutorials, and reviews. Educational content only.</p></div>
-<div><h4>Quick Links</h4><a href="/${langCode}/">Home</a><a href="/blog/${langCode}/">Blog</a><a href="/${langCode}/categories/">Categories</a><a href="/${langCode}/about.html">About</a><a href="/${langCode}/contact.html">Contact</a></div>
-<div><h4>Legal</h4><a href="/${langCode}/privacy-policy.html">Privacy Policy</a><a href="/${langCode}/terms.html">Terms of Service</a><a href="/${langCode}/dmca.html">DMCA Notice</a><a href="/${langCode}/disclaimer.html">Disclaimer</a></div>
-<div><h4>Follow Us</h4><a href="https://wa.me/${WHATSAPP}" target="_blank">💬 WhatsApp</a></div>
+<div><h2>${SITE_NAME}</h2><p>Your trusted source for IPTV guides, tutorials, and reviews. Educational content only.</p></div>
+<div><h2>Quick Links</h2><a href="/${langCode}/">Home</a><a href="/blog/${langCode}/">Blog</a><a href="/${langCode}/categories/">Categories</a><a href="/${langCode}/about.html">About</a><a href="/${langCode}/contact.html">Contact</a></div>
+<div><h2>Legal</h2><a href="/${langCode}/privacy-policy.html">Privacy Policy</a><a href="/${langCode}/terms.html">Terms of Service</a><a href="/${langCode}/dmca.html">DMCA Notice</a><a href="/${langCode}/disclaimer.html">Disclaimer</a></div>
+<div><h2>Follow Us</h2><a href="https://wa.me/${WHATSAPP}" target="_blank">💬 WhatsApp</a></div>
 </div>
 <div class="footer-bottom"><p>© 2026 ${SITE_NAME}. All rights reserved. We do not host or stream any copyrighted content.</p></div>
 </div>
@@ -777,7 +778,7 @@ function generateBlogPage(langCode, articles) {
     <div class="article-row">
       <div class="info">
         <span class="card-category">${a.category}</span>
-        <h3><a href="/${langCode}/${a.slug}.html">${a.title}</a></h3>
+        <h2><a href="/${langCode}/${a.slug}.html">${a.title}</a></h2>
         <p>${a.excerpt.substring(0, 150)}</p>
         <div class="meta">📅 ${a.date}</div>
       </div>
@@ -801,7 +802,7 @@ ${langLinks}
 <meta property="og:title" content="Blog - ${SITE_NAME}">
 <meta property="og:url" content="${SITE_URL}/blog/${langCode}/">
 <meta name="twitter:card" content="summary_large_image">
-<style>body{font-family:system-ui,-apple-system,sans-serif;background:#0f0f23;color:#e0e0e0;line-height:1.7;margin:0;padding:0}.container{max-width:1200px;margin:0 auto;padding:0 20px}.header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:15px 0;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.05)}.header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}.logo{font-size:28px;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}.logo span{color:#00c853}.nav{display:flex;gap:25px;flex-wrap:wrap}.nav a{color:#ccc;text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;text-transform:uppercase;letter-spacing:1px}.nav a:hover{color:#00c853}.lang-switch{display:flex;gap:5px;flex-wrap:wrap}.lang-switch a{padding:4px 10px;border-radius:4px;font-size:12px;font-weight:600;text-decoration:none;color:#aaa;border:1px solid #333;transition:all .3s}.lang-switch a.active,.lang-switch a:hover{color:#fff;border-color:#00c853;background:rgba(0,200,83,0.1)}.page-header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:50px 0;text-align:center;border-bottom:1px solid rgba(255,255,255,0.05)}.page-header h1{font-size:36px;color:#fff;margin-bottom:10px}.page-header p{color:#888;font-size:16px}.content-area{min-height:400px;padding:40px 0}.article-list{display:flex;flex-direction:column;gap:20px}.article-row{display:flex;gap:20px;background:linear-gradient(135deg,#1e1e3a,#16213e);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.05);transition:all .3s}.article-row:hover{transform:translateY(-2px);border-color:rgba(0,200,83,0.2)}.info h3{margin:0 0 8px;font-size:16px}.info h3 a{color:#fff;text-decoration:none}.info h3 a:hover{color:#00c853}.info p{color:#999;font-size:13px;margin:0 0 8px}.info .meta{color:#666;font-size:12px}.card-category{display:inline-block;padding:2px 10px;background:rgba(0,200,83,0.15);color:#00c853;border-radius:20px;font-size:11px;font-weight:600;margin-bottom:8px}.footer{background:#0f0f23;padding:50px 0 20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px}.footer h4{color:#fff;font-size:16px;margin-bottom:15px}.footer p{color:#888;font-size:13px}.footer a{display:block;color:#888;text-decoration:none;font-size:13px;margin-bottom:8px}.footer a:hover{color:#00c853}.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-bottom p{color:#666;font-size:12px}.whatsapp-float{position:fixed;bottom:20px;right:20px;z-index:999}.whatsapp-float a{display:flex;align-items:center;justify-content:center;width:56px;height:56px;background:#25d366;border-radius:50%;color:#fff;box-shadow:0 4px 12px rgba(37,211,102,0.4)}.pagination{display:flex;justify-content:center;gap:8px;margin-top:30px}.pagination a{padding:8px 16px;background:#1e1e3a;color:#00c853;border-radius:6px;text-decoration:none;font-size:14px}.pagination a:hover{background:#00c853;color:#fff}</style>
+<style>body{font-family:system-ui,-apple-system,sans-serif;background:#0f0f23;color:#e0e0e0;line-height:1.7;margin:0;padding:0}.container{max-width:1200px;margin:0 auto;padding:0 20px}.header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:15px 0;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.05)}.header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}.logo{font-size:28px;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}.logo span{color:#00c853}.nav{display:flex;gap:25px;flex-wrap:wrap}.nav a{color:#ccc;text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;text-transform:uppercase;letter-spacing:1px}.nav a:hover{color:#00c853}.lang-switch{display:flex;gap:5px;flex-wrap:wrap}.lang-switch a{padding:4px 10px;border-radius:4px;font-size:12px;font-weight:600;text-decoration:none;color:#aaa;border:1px solid #333;transition:all .3s}.lang-switch a.active,.lang-switch a:hover{color:#fff;border-color:#00c853;background:rgba(0,200,83,0.1)}.page-header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:50px 0;text-align:center;border-bottom:1px solid rgba(255,255,255,0.05)}.page-header h1{font-size:36px;color:#fff;margin-bottom:10px}.page-header p{color:#888;font-size:16px}.content-area{min-height:400px;padding:40px 0}.article-list{display:flex;flex-direction:column;gap:20px}.article-row{display:flex;gap:20px;background:linear-gradient(135deg,#1e1e3a,#16213e);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.05);transition:all .3s}.article-row:hover{transform:translateY(-2px);border-color:rgba(0,200,83,0.2)}.info h2{margin:0 0 8px;font-size:16px}.info h2 a{color:#fff;text-decoration:none}.info h2 a:hover{color:#00c853}.info p{color:#999;font-size:13px;margin:0 0 8px}.info .meta{color:#666;font-size:12px}.card-category{display:inline-block;padding:2px 10px;background:rgba(0,200,83,0.15);color:#00c853;border-radius:20px;font-size:11px;font-weight:600;margin-bottom:8px}.footer{background:#0f0f23;padding:50px 0 20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px}.footer h2{color:#fff;font-size:16px;margin-bottom:15px}.footer p{color:#888;font-size:13px}.footer a{display:block;color:#888;text-decoration:none;font-size:13px;margin-bottom:8px}.footer a:hover{color:#00c853}.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-bottom p{color:#666;font-size:12px}.whatsapp-float{position:fixed;bottom:20px;right:20px;z-index:999}.whatsapp-float a{display:flex;align-items:center;justify-content:center;width:56px;height:56px;background:#25d366;border-radius:50%;color:#fff;box-shadow:0 4px 12px rgba(37,211,102,0.4)}.pagination{display:flex;justify-content:center;gap:8px;margin-top:30px}.pagination a{padding:8px 16px;background:#1e1e3a;color:#00c853;border-radius:6px;text-decoration:none;font-size:14px}.pagination a:hover{background:#00c853;color:#fff}</style>
 </head>
 <body>
 <header class="header"><div class="container">
@@ -811,15 +812,17 @@ ${langLinks}
 ${LANGUAGES.map(l => `<a href="/blog/${l.code}/" data-lang="${l.code}"${l.code === langCode ? ' class="active"' : ''}>${l.flag} ${l.code.toUpperCase()}</a>`).join('\n')}
 </div>
 </div></header>
+<main>
 <section class="page-header"><div class="container"><h1>📝 Blog - ${lang.name}</h1><p>${langArticles.length} articles in ${lang.name}</p></div></section>
 <section class="content-area"><div class="container">
 <div class="article-list">${rows || '<p style="color:#888;padding:20px">Articles coming soon...</p>'}</div>
 </div></section>
+</main>
 <footer class="footer"><div class="container">
 <div class="footer-grid">
-<div><h4>${SITE_NAME}</h4><p>Your trusted source for IPTV guides.</p></div>
-<div><h4>Quick Links</h4><a href="/${langCode}/">Home</a><a href="/blog/${langCode}/">Blog</a><a href="/${langCode}/categories/">Categories</a></div>
-<div><h4>Legal</h4><a href="/${langCode}/privacy-policy.html">Privacy Policy</a><a href="/${langCode}/terms.html">Terms</a><a href="/${langCode}/dmca.html">DMCA</a><a href="/${langCode}/disclaimer.html">Disclaimer</a></div>
+<div><h2>${SITE_NAME}</h2><p>Your trusted source for IPTV guides.</p></div>
+<div><h2>Quick Links</h2><a href="/${langCode}/">Home</a><a href="/blog/${langCode}/">Blog</a><a href="/${langCode}/categories/">Categories</a></div>
+<div><h2>Legal</h2><a href="/${langCode}/privacy-policy.html">Privacy Policy</a><a href="/${langCode}/terms.html">Terms</a><a href="/${langCode}/dmca.html">DMCA</a><a href="/${langCode}/disclaimer.html">Disclaimer</a></div>
 </div>
 <div class="footer-bottom"><p>© 2026 ${SITE_NAME}. All rights reserved.</p></div>
 </div></footer>
@@ -837,7 +840,7 @@ function generateCategoryPage(langCode, cat, catArticles) {
       <div class="thumb">${cat.icon}</div>
       <div class="info">
         <span class="card-category">${cat.name}</span>
-        <h3><a href="/${langCode}/${a.slug}.html">${a.title}</a></h3>
+        <h2><a href="/${langCode}/${a.slug}.html">${a.title}</a></h2>
         <p>${a.excerpt.substring(0, 150)}</p>
         <div class="meta">📅 ${a.date}</div>
       </div>
@@ -851,7 +854,7 @@ function generateCategoryPage(langCode, cat, catArticles) {
 <meta name="description" content="${catArticles.length} articles about ${cat.name.toLowerCase()} in ${lang.name}">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="${SITE_URL}/${langCode}/categories/${cat.slug}.html">
-<style>body{font-family:system-ui,-apple-system,sans-serif;background:#0f0f23;color:#e0e0e0;line-height:1.7;margin:0;padding:0}.container{max-width:1200px;margin:0 auto;padding:0 20px}.header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:15px 0;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.05)}.header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}.logo{font-size:28px;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}.logo span{color:#00c853}.nav{display:flex;gap:25px;flex-wrap:wrap}.nav a{color:#ccc;text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;text-transform:uppercase;letter-spacing:1px}.nav a:hover{color:#00c853}.lang-switch{display:flex;gap:5px;flex-wrap:wrap}.lang-switch a{padding:4px 10px;border-radius:4px;font-size:12px;font-weight:600;text-decoration:none;color:#aaa;border:1px solid #333;transition:all .3s}.lang-switch a.active,.lang-switch a:hover{color:#fff;border-color:#00c853;background:rgba(0,200,83,0.1)}.page-header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:50px 0;text-align:center;border-bottom:1px solid rgba(255,255,255,0.05)}.page-header h1{font-size:36px;color:#fff;margin-bottom:10px}.page-header p{color:#888;font-size:16px}.content-area{min-height:400px;padding:40px 0}.article-list{display:flex;flex-direction:column;gap:20px}.article-row{display:flex;gap:20px;background:linear-gradient(135deg,#1e1e3a,#16213e);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.05);transition:all .3s}.article-row:hover{transform:translateY(-2px);border-color:rgba(0,200,83,0.2)}.thumb{font-size:40px;display:flex;align-items:center;justify-content:center;min-width:60px}.info h3{margin:0 0 8px;font-size:16px}.info h3 a{color:#fff;text-decoration:none}.info h3 a:hover{color:#00c853}.info p{color:#999;font-size:13px;margin:0 0 8px}.info .meta{color:#666;font-size:12px}.card-category{display:inline-block;padding:2px 10px;background:rgba(0,200,83,0.15);color:#00c853;border-radius:20px;font-size:11px;font-weight:600;margin-bottom:8px}.footer{background:#0f0f23;padding:50px 0 20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px}.footer h4{color:#fff;font-size:16px;margin-bottom:15px}.footer p{color:#888;font-size:13px}.footer a{display:block;color:#888;text-decoration:none;font-size:13px;margin-bottom:8px}.footer a:hover{color:#00c853}.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-bottom p{color:#666;font-size:12px}.whatsapp-float{position:fixed;bottom:20px;right:20px;z-index:999}.whatsapp-float a{display:flex;align-items:center;justify-content:center;width:56px;height:56px;background:#25d366;border-radius:50%;color:#fff;box-shadow:0 4px 12px rgba(37,211,102,0.4)}</style>
+<style>body{font-family:system-ui,-apple-system,sans-serif;background:#0f0f23;color:#e0e0e0;line-height:1.7;margin:0;padding:0}.container{max-width:1200px;margin:0 auto;padding:0 20px}.header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:15px 0;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.05)}.header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}.logo{font-size:28px;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}.logo span{color:#00c853}.nav{display:flex;gap:25px;flex-wrap:wrap}.nav a{color:#ccc;text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;text-transform:uppercase;letter-spacing:1px}.nav a:hover{color:#00c853}.lang-switch{display:flex;gap:5px;flex-wrap:wrap}.lang-switch a{padding:4px 10px;border-radius:4px;font-size:12px;font-weight:600;text-decoration:none;color:#aaa;border:1px solid #333;transition:all .3s}.lang-switch a.active,.lang-switch a:hover{color:#fff;border-color:#00c853;background:rgba(0,200,83,0.1)}.page-header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:50px 0;text-align:center;border-bottom:1px solid rgba(255,255,255,0.05)}.page-header h1{font-size:36px;color:#fff;margin-bottom:10px}.page-header p{color:#888;font-size:16px}.content-area{min-height:400px;padding:40px 0}.article-list{display:flex;flex-direction:column;gap:20px}.article-row{display:flex;gap:20px;background:linear-gradient(135deg,#1e1e3a,#16213e);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.05);transition:all .3s}.article-row:hover{transform:translateY(-2px);border-color:rgba(0,200,83,0.2)}.thumb{font-size:40px;display:flex;align-items:center;justify-content:center;min-width:60px}.info h2{margin:0 0 8px;font-size:16px}.info h2 a{color:#fff;text-decoration:none}.info h2 a:hover{color:#00c853}.info p{color:#999;font-size:13px;margin:0 0 8px}.info .meta{color:#666;font-size:12px}.card-category{display:inline-block;padding:2px 10px;background:rgba(0,200,83,0.15);color:#00c853;border-radius:20px;font-size:11px;font-weight:600;margin-bottom:8px}.footer{background:#0f0f23;padding:50px 0 20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px}.footer h2{color:#fff;font-size:16px;margin-bottom:15px}.footer p{color:#888;font-size:13px}.footer a{display:block;color:#888;text-decoration:none;font-size:13px;margin-bottom:8px}.footer a:hover{color:#00c853}.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-bottom p{color:#666;font-size:12px}.whatsapp-float{position:fixed;bottom:20px;right:20px;z-index:999}.whatsapp-float a{display:flex;align-items:center;justify-content:center;width:56px;height:56px;background:#25d366;border-radius:50%;color:#fff;box-shadow:0 4px 12px rgba(37,211,102,0.4)}</style>
 </head>
 <body>
 <header class="header"><div class="container">
@@ -861,15 +864,17 @@ function generateCategoryPage(langCode, cat, catArticles) {
 ${LANGUAGES.map(l => `<a href="/${l.code}/categories/${cat.slug}.html" data-lang="${l.code}"${l.code === langCode ? ' class="active"' : ''}>${l.flag} ${l.code.toUpperCase()}</a>`).join('\n')}
 </div>
 </div></header>
+<main>
 <section class="page-header"><div class="container"><h1>${cat.icon} ${cat.name}</h1><p>${catArticles.length} articles in ${lang.name}</p></div></section>
 <section class="content-area"><div class="container">
 <div class="article-list">${rows || '<p style="color:#888;padding:20px">Articles coming soon...</p>'}</div>
 </div></section>
+</main>
 <footer class="footer"><div class="container">
 <div class="footer-grid">
-<div><h4>${SITE_NAME}</h4><p>Your trusted source for IPTV guides.</p></div>
-<div><h4>Quick Links</h4><a href="/${langCode}/">Home</a><a href="/blog/${langCode}/">Blog</a><a href="/${langCode}/categories/">Categories</a></div>
-<div><h4>Legal</h4><a href="/${langCode}/privacy-policy.html">Privacy Policy</a><a href="/${langCode}/terms.html">Terms</a><a href="/${langCode}/dmca.html">DMCA</a><a href="/${langCode}/disclaimer.html">Disclaimer</a></div>
+<div><h2>${SITE_NAME}</h2><p>Your trusted source for IPTV guides.</p></div>
+<div><h2>Quick Links</h2><a href="/${langCode}/">Home</a><a href="/blog/${langCode}/">Blog</a><a href="/${langCode}/categories/">Categories</a></div>
+<div><h2>Legal</h2><a href="/${langCode}/privacy-policy.html">Privacy Policy</a><a href="/${langCode}/terms.html">Terms</a><a href="/${langCode}/dmca.html">DMCA</a><a href="/${langCode}/disclaimer.html">Disclaimer</a></div>
 </div>
 <div class="footer-bottom"><p>© 2026 ${SITE_NAME}. All rights reserved.</p></div>
 </div></footer>
@@ -1231,7 +1236,7 @@ function generateStaticPages() {
 <title>${page.title} - ${SITE_NAME}</title>
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="${SITE_URL}/${lang.code}/${filename}">
-<style>body{font-family:system-ui,-apple-system,sans-serif;background:#0f0f23;color:#e0e0e0;line-height:1.7;margin:0;padding:0}.container{max-width:800px;margin:0 auto;padding:0 20px}.header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:15px 0;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.05)}.header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}.logo{font-size:28px;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}.logo span{color:#00c853}.nav{display:flex;gap:25px;flex-wrap:wrap}.nav a{color:#ccc;text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;text-transform:uppercase;letter-spacing:1px}.nav a:hover{color:#00c853}.lang-switch{display:flex;gap:5px;flex-wrap:wrap}.lang-switch a{padding:4px 10px;border-radius:4px;font-size:12px;font-weight:600;text-decoration:none;color:#aaa;border:1px solid #333;transition:all .3s}.lang-switch a.active,.lang-switch a:hover{color:#fff;border-color:#00c853;background:rgba(0,200,83,0.1)}.page-header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:50px 0;text-align:center;border-bottom:1px solid rgba(255,255,255,0.05)}.page-header h1{font-size:36px;color:#fff;margin-bottom:10px}.content-area{min-height:400px;padding:40px 0}.content-area h2{color:#fff;font-size:22px;margin:30px 0 15px}.content-area p{color:#bbb;margin-bottom:15px;font-size:16px;line-height:1.8}.content-area ul{color:#bbb;margin-bottom:15px;padding-left:20px}.content-area li{margin-bottom:8px}.footer{background:#0f0f23;padding:50px 0 20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px}.footer h4{color:#fff;font-size:16px;margin-bottom:15px}.footer p{color:#888;font-size:13px}.footer a{display:block;color:#888;text-decoration:none;font-size:13px;margin-bottom:8px}.footer a:hover{color:#00c853}.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-bottom p{color:#666;font-size:12px}</style>
+<style>body{font-family:system-ui,-apple-system,sans-serif;background:#0f0f23;color:#e0e0e0;line-height:1.7;margin:0;padding:0}.container{max-width:800px;margin:0 auto;padding:0 20px}.header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:15px 0;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.05)}.header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}.logo{font-size:28px;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}.logo span{color:#00c853}.nav{display:flex;gap:25px;flex-wrap:wrap}.nav a{color:#ccc;text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;text-transform:uppercase;letter-spacing:1px}.nav a:hover{color:#00c853}.lang-switch{display:flex;gap:5px;flex-wrap:wrap}.lang-switch a{padding:4px 10px;border-radius:4px;font-size:12px;font-weight:600;text-decoration:none;color:#aaa;border:1px solid #333;transition:all .3s}.lang-switch a.active,.lang-switch a:hover{color:#fff;border-color:#00c853;background:rgba(0,200,83,0.1)}.page-header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:50px 0;text-align:center;border-bottom:1px solid rgba(255,255,255,0.05)}.page-header h1{font-size:36px;color:#fff;margin-bottom:10px}.content-area{min-height:400px;padding:40px 0}.content-area h2{color:#fff;font-size:22px;margin:30px 0 15px}.content-area p{color:#bbb;margin-bottom:15px;font-size:16px;line-height:1.8}.content-area ul{color:#bbb;margin-bottom:15px;padding-left:20px}.content-area li{margin-bottom:8px}.footer{background:#0f0f23;padding:50px 0 20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px}.footer h2{color:#fff;font-size:16px;margin-bottom:15px}.footer p{color:#888;font-size:13px}.footer a{display:block;color:#888;text-decoration:none;font-size:13px;margin-bottom:8px}.footer a:hover{color:#00c853}.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-bottom p{color:#666;font-size:12px}</style>
 </head>
 <body>
 <header class="header"><div class="container">
@@ -1241,13 +1246,15 @@ function generateStaticPages() {
 ${LANGUAGES.map(l => `<a href="/${l.code}/${filename}" data-lang="${l.code}"${l.code === lang.code ? ' class="active"' : ''}>${l.flag} ${l.code.toUpperCase()}</a>`).join('\n')}
 </div>
 </div></header>
+<main>
 <section class="page-header"><div class="container"><h1>${page.heading}</h1></div></section>
 <section class="content-area"><div class="container">${page.content}</div></section>
+</main>
 <footer class="footer"><div class="container">
 <div class="footer-grid">
-<div><h4>${SITE_NAME}</h4><p>Your trusted source for IPTV guides.</p></div>
-<div><h4>Quick Links</h4><a href="/${lang.code}/">Home</a><a href="/blog/${lang.code}/">Blog</a><a href="/${lang.code}/categories/">Categories</a></div>
-<div><h4>Legal</h4><a href="/${lang.code}/privacy-policy.html">Privacy Policy</a><a href="/${lang.code}/terms.html">Terms</a><a href="/${lang.code}/dmca.html">DMCA</a><a href="/${lang.code}/disclaimer.html">Disclaimer</a></div>
+<div><h2>${SITE_NAME}</h2><p>Your trusted source for IPTV guides.</p></div>
+<div><h2>Quick Links</h2><a href="/${lang.code}/">Home</a><a href="/blog/${lang.code}/">Blog</a><a href="/${lang.code}/categories/">Categories</a></div>
+<div><h2>Legal</h2><a href="/${lang.code}/privacy-policy.html">Privacy Policy</a><a href="/${lang.code}/terms.html">Terms</a><a href="/${lang.code}/dmca.html">DMCA</a><a href="/${lang.code}/disclaimer.html">Disclaimer</a></div>
 </div>
 <div class="footer-bottom"><p>© 2026 ${SITE_NAME}. All rights reserved.</p></div>
 </div></footer>
@@ -1258,6 +1265,32 @@ ${LANGUAGES.map(l => `<a href="/${l.code}/${filename}" data-lang="${l.code}"${l.
     });
   });
   console.log('Static pages generated for all languages');
-}
+
+  // Generate language index pages (e.g., /en/index.html -> redirects to /blog/en/)
+  LANGUAGES.forEach(lang => {
+    const langDir = path.join(__dirname, lang.code);
+    const dir = lang.code === 'ar' ? 'rtl' : 'ltr';
+    const html = `<!DOCTYPE html>
+<html lang="${lang.code}" dir="${dir}">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>${SITE_NAME} - ${lang.name}</title>
+<meta name="description" content="IPTV Pro Guide - ${lang.name}. Best IPTV guides, reviews, and tutorials.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="${SITE_URL}/${lang.code}/">
+<meta http-equiv="refresh" content="0; url=/blog/${lang.code}/">
+<style>body{font-family:system-ui,-apple-system,sans-serif;background:#0f0f23;color:#e0e0e0;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;text-align:center}.container{padding:20px}h1{color:#fff}a{color:#00c853}</style>
+</head>
+<body>
+<div class="container">
+<h1>📺 ${SITE_NAME}</h1>
+<p>Redirecting to <a href="/blog/${lang.code}/">${lang.name} Blog</a>...</p>
+</div>
+</body>
+</html>`;
+      fs.writeFileSync(path.join(langDir, 'index.html'), html);
+    });
+    console.log('Language index pages generated');
+  }
 
 generateAll().catch(console.error);
