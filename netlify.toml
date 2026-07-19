@@ -46,6 +46,16 @@
   status = 301
 
 [[redirects]]
+  from = "/search"
+  to = "/search.html"
+  status = 301
+
+[[redirects]]
+  from = "/search.html"
+  to = "/articles/"
+  status = 302
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 404

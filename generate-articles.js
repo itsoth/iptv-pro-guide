@@ -743,7 +743,7 @@ ${keywordStr.split(', ').slice(0, 20).map(k => `<a href="/search.html?q=${encode
 <div class="cookie-consent" id="cookieConsent">
 <div class="container">
 <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
-<button class="btn-cookie" onclick="localStorage.setItem('cookieConsent','true');this.parentElement.parentElement.style.display='none'">Accept</button>
+<button class="btn-cookie">Accept</button>
 </div>
 </div>
 
@@ -787,8 +787,8 @@ async function generateAll() {
     }
   }
 
-  fs.writeFileSync(path.join(articlesDir, 'articles.json'), JSON.stringify(articles));
-  console.log(`\nDone! Generated ${articles.length} unique articles.`);
+  fs.writeFileSync(path.join(articlesDir, 'articles.json'), JSON.stringify(articles.slice(0, 1000)));
+  console.log(`\nDone! Generated ${articles.length} unique articles. JSON index contains 1000 articles for fast loading.`);
 
   generateSitemap(articles);
   generateRSS(articles);

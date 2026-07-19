@@ -170,7 +170,7 @@
 <div class="sidebar">
 <h3 data-i18n="newsletter">Newsletter</h3>
 <p style="color:#888;font-size:13px;margin-bottom:12px" data-i18n="newsletterText">Subscribe for the latest IPTV guides and tips</p>
-<form class="newsletter-form">
+<form class="newsletter-form" onsubmit="event.preventDefault();var e=this.querySelector('input[type=email]');if(e&&e.value)window.open('https://wa.me/212630050938?text='+encodeURIComponent('Hi! I want to subscribe to the IPTV newsletter. My email: '+e.value),'_blank');alert('Thank you! You will be redirected to WhatsApp to confirm.');">
 <input type="email" data-i18n-placeholder="emailPlaceholder" placeholder="Your email address" required>
 <button type="submit" data-i18n="subscribe">Subscribe</button>
 </form>
