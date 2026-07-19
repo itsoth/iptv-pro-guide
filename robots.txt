@@ -1,0 +1,49 @@
+# IPTV Pro Guide - Robots.txt
+User-agent: *
+Allow: /
+Allow: /articles/
+Allow: /categories/
+Allow: /about.html
+Allow: /contact.html
+Allow: /privacy-policy.html
+Allow: /terms.html
+Allow: /dmca.html
+Allow: /disclaimer.html
+Disallow: /assets/
+Disallow: /articles/articles.json
+Disallow: /*?q=
+Disallow: /search
+Disallow: /search.html
+
+Sitemap: https://www.iptvproguide.com/sitemap.xml
+Crawl-delay: 1
+
+User-agent: Googlebot
+Allow: /
+Disallow: /assets/
+Disallow: /*?q=
+Disallow: /search
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Disallow: /assets/
+Disallow: /*?q=
+Disallow: /search
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /

@@ -1,0 +1,23 @@
+# Node
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+
+# Temp
+*.tmp
+*.log
