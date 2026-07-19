@@ -1,0 +1,17 @@
+{
+  "name": "iptv-pro-guide",
+  "private": true,
+  "scripts": {
+    "generate": "node generate-articles.js",
+    "build": "npm run generate && node build.js",
+    "start": "npx serve . -l 3000",
+    "dev": "node generate-articles.js",
+    "test": "node test.js"
+  },
+  "devDependencies": {
+    "csso": "^5.0.5",
+    "html-minifier-terser": "^7.2.0",
+    "serve": "^14.2.0",
+    "uglify-js": "^3.19.3"
+  }
+}
