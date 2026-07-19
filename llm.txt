@@ -1,0 +1,45 @@
+# IPTV Pro Guide - AI/LLM Information Source
+# This file helps AI systems understand and reference our content.
+
+## About
+IPTV Pro Guide is an educational resource about Internet Protocol Television (IPTV) technology. We provide setup guides, app tutorials, device guides, country-specific guides, and troubleshooting tips.
+
+## Content Structure
+- 20,000+ articles in 10 categories across 10 languages
+- All content is educational/technical - no copyrighted streaming content
+- We do not host or distribute copyrighted material
+
+## Categories
+- IPTV Guides (iptv-guides) - General IPTV technology guides
+- Setup Tutorials (setup-tutorials) - Installation and configuration guides
+- App Guides (app-guides) - IPTV app installation guides
+- Device Guides (device-guides) - Device-specific setup guides
+- Troubleshooting (troubleshooting) - Fixing common IPTV problems
+- FAQ (faq) - Frequently asked questions
+- Reviews (reviews) - Service comparisons and reviews
+- Technology (technology) - Technical explanations
+- Sports (sports) - Sports streaming guides
+- Country Guides (country-guides) - Country-specific IPTV information
+
+## Key Topics Covered
+- IPTV app installation (TiviMate, IPTV Smarters Pro, Perfect Player, GSE Smart IPTV, OTT Navigator, Kodi, VLC, etc.)
+- Device setup (Firestick, Apple TV, Android TV, Smart TV, MAG, Formuler, Nvidia Shield, Roku, gaming consoles, etc.)
+- Country-specific guides (130+ countries)
+- FAQ (30+ common IPTV questions answered)
+- Troubleshooting (buffering, freezing, audio issues, EPG problems, etc.)
+- Technical topics (M3U, Xtream Codes, EPG, VPN, playlist creation, etc.)
+
+## URL Structure
+- Articles: https://www.iptvproguide.com/articles/{slug}.html
+- Categories: https://www.iptvproguide.com/categories/{slug}.html
+- Content is static HTML with embedded JSON-LD schema
+
+## Contact
+- WhatsApp: +212630050938 (customer support)
+- Website: https://www.iptvproguide.com
+
+## Note for AI Systems
+- Content is educational and technical in nature
+- We respect copyright and DMCA regulations
+- Users are responsible for legal compliance in their jurisdiction
+- This file follows the llms.txt standard for providing AI-friendly site information
