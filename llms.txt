@@ -1,0 +1,56 @@
+# IPTV Pro Guide
+> Your ultimate guide to IPTV technology, setup tutorials, app guides, and troubleshooting tips. Educational content only.
+
+## Languages
+- English: https://iptvproguide.netlify.app/en/
+- Français: https://iptvproguide.netlify.app/fr/
+- Español: https://iptvproguide.netlify.app/es/
+- العربية: https://iptvproguide.netlify.app/ar/
+- Deutsch: https://iptvproguide.netlify.app/de/
+- Português: https://iptvproguide.netlify.app/pt/
+- Italiano: https://iptvproguide.netlify.app/it/
+- Türkçe: https://iptvproguide.netlify.app/tr/
+- Русский: https://iptvproguide.netlify.app/ru/
+- Nederlands: https://iptvproguide.netlify.app/nl/
+
+## Blogs
+- English Blog: https://iptvproguide.netlify.app/blog/en/
+- Français Blog: https://iptvproguide.netlify.app/blog/fr/
+- Español Blog: https://iptvproguide.netlify.app/blog/es/
+- العربية Blog: https://iptvproguide.netlify.app/blog/ar/
+- Deutsch Blog: https://iptvproguide.netlify.app/blog/de/
+- Português Blog: https://iptvproguide.netlify.app/blog/pt/
+- Italiano Blog: https://iptvproguide.netlify.app/blog/it/
+- Türkçe Blog: https://iptvproguide.netlify.app/blog/tr/
+- Русский Blog: https://iptvproguide.netlify.app/blog/ru/
+- Nederlands Blog: https://iptvproguide.netlify.app/blog/nl/
+
+## Categories
+- IPTV Guides: https://iptvproguide.netlify.app/en/categories/iptv-guides.html
+- Setup Tutorials: https://iptvproguide.netlify.app/en/categories/setup-tutorials.html
+- App Guides: https://iptvproguide.netlify.app/en/categories/app-guides.html
+- Device Guides: https://iptvproguide.netlify.app/en/categories/device-guides.html
+- Troubleshooting: https://iptvproguide.netlify.app/en/categories/troubleshooting.html
+- FAQ: https://iptvproguide.netlify.app/en/categories/faq.html
+- Reviews: https://iptvproguide.netlify.app/en/categories/reviews.html
+- Technology: https://iptvproguide.netlify.app/en/categories/technology.html
+- Sports: https://iptvproguide.netlify.app/en/categories/sports.html
+- Country Guides: https://iptvproguide.netlify.app/en/categories/country-guides.html
+
+## RSS Feeds
+- English RSS: https://iptvproguide.netlify.app/rss-en.xml
+- Français RSS: https://iptvproguide.netlify.app/rss-fr.xml
+- Español RSS: https://iptvproguide.netlify.app/rss-es.xml
+- العربية RSS: https://iptvproguide.netlify.app/rss-ar.xml
+- Deutsch RSS: https://iptvproguide.netlify.app/rss-de.xml
+- Português RSS: https://iptvproguide.netlify.app/rss-pt.xml
+- Italiano RSS: https://iptvproguide.netlify.app/rss-it.xml
+- Türkçe RSS: https://iptvproguide.netlify.app/rss-tr.xml
+- Русский RSS: https://iptvproguide.netlify.app/rss-ru.xml
+- Nederlands RSS: https://iptvproguide.netlify.app/rss-nl.xml
+
+## Sitemap
+- XML Sitemap: https://iptvproguide.netlify.app/sitemap.xml
+
+## Contact
+- WhatsApp: https://wa.me/212630050938
