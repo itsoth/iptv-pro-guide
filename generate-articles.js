@@ -1,5 +1,16 @@
 const fs = require('fs');
 const path = require('path');
+const { TRANSLATIONS } = require('./translations');
+function t(langCode, key, replacements) {
+  const lang = TRANSLATIONS[langCode] || TRANSLATIONS.en;
+  let str = lang[key] || TRANSLATIONS.en[key] || key;
+  if (replacements) {
+    for (const [k, v] of Object.entries(replacements)) {
+      str = str.replace(new RegExp('\\[' + k + '\\]', 'g'), v);
+    }
+  }
+  return str;
+}
 
 const WHATSAPP = '212630050938';
 const SITE_URL = 'https://iptvproguide.netlify.app';
@@ -261,10 +272,10 @@ function generateArticle(index, langCode) {
 <h2>Introduction</h2>
 <p>Welcome to our complete guide on <strong>how to install and set up ${app}</strong> for IPTV streaming. ${app} is one of the most popular IPTV applications available, offering a user-friendly interface, powerful features, and wide device compatibility. This guide will walk you through the installation process on ${device} and other devices.</p>
 
-<h2>What is ${app}?</h2>
+<h2>${t(langCode, 'article_what_is', { APP: app })}</h2>
 <p>${app} is a feature-rich IPTV player that allows you to stream live TV channels, movies, series, and video on demand content from your IPTV provider. It supports M3U playlists, Xtream Codes API, and has built-in EPG support for TV guides. The app is available on multiple platforms including Android, iOS, Windows, and Smart TV.</p>
 
-<h2>Key Features of ${app}</h2>
+<h2>${t(langCode, 'article_key_features', { APP: app })}</h2>
 <ul>
 <li>Support for M3U and Xtream Codes API</li>
 <li>Built-in EPG (Electronic Program Guide)</li>
@@ -276,7 +287,7 @@ function generateArticle(index, langCode) {
 <li>Auto-update for channel lists</li>
 </ul>
 
-<h2>How to Install ${app} on ${device}</h2>
+<h2>${t(langCode, 'article_install_on', { APP: app, DEVICE: device })}</h2>
 <p>Follow these steps to install ${app} on your ${device} for the best IPTV experience:</p>
 <ol>
 <li>Turn on your ${device} and ensure it is connected to the internet</li>
@@ -289,7 +300,7 @@ function generateArticle(index, langCode) {
 <li>Wait for the channel list to load and start watching</li>
 </ol>
 
-<h2>How to Install ${app} on Other Devices</h2>
+<h2>${t(langCode, 'article_install_other', { APP: app })}</h2>
 <p>${app} can also be installed on many other devices. Here are quick guides for popular platforms:</p>
 <p><strong>Firestick:</strong> Enable Apps from Unknown Sources in Developer Options. Install Downloader from Amazon Store. Enter the ${app} download URL in Downloader. Install and enter your IPTV credentials.</p>
 <p><strong>Android TV:</strong> Open Google Play Store, search ${app}, install, open, and enter provider details.</p>
@@ -297,7 +308,7 @@ function generateArticle(index, langCode) {
 <p><strong>iPhone/iPad:</strong> Available on App Store. Download, install, enter your provider URL and credentials.</p>
 <p><strong>Windows PC:</strong> Download from official website or Microsoft Store. Install and configure with your IPTV subscription.</p>
 
-<h2>${app} Configuration Tips</h2>
+<h2>${t(langCode, 'article_config_tips', { APP: app })}</h2>
 <p>After installation, configure ${app} for the best experience:</p>
 <ul>
 <li><strong>EPG Setup:</strong> Enter your EPG URL in Settings to get TV schedules</li>
@@ -308,7 +319,7 @@ function generateArticle(index, langCode) {
 <li><strong>Network:</strong> Use wired Ethernet connection for best stability</li>
 </ul>
 
-<h2>Solving Common ${app} Problems</h2>
+<h2>${t(langCode, 'article_troubleshooting', { APP: app })}</h2>
 <p>If you encounter issues with ${app}, try these solutions:</p>
 <ul>
 <li><strong>App not loading:</strong> Clear cache, restart device, reinstall app</li>
@@ -318,20 +329,20 @@ function generateArticle(index, langCode) {
 <li><strong>Audio issues:</strong> Check audio track, adjust audio delay, change player</li>
 </ul>
 
-<h2>Frequently Asked Questions about ${app}</h2>
+<h2>${t(langCode, 'article_faq', { APP: app })}</h2>
 <div class="faq-item"><h3>Is ${app} free?</h3><p>${app} offers a free version with basic features. The premium version unlocks additional features including recording, multi-screen, and advanced settings.</p></div>
 <div class="faq-item"><h3>Can I use ${app} on multiple devices?</h3><p>Yes, you can install ${app} on multiple devices. You will need your IPTV subscription credentials for each device.</p></div>
 <div class="faq-item"><h3>Does ${app} support catch-up TV?</h3><p>If your IPTV provider offers catch-up TV, ${app} can display and play catch-up content through the EPG interface.</p></div>
 <div class="faq-item"><h3>How do I update ${app}?</h3><p>Update through your device app store or download the latest version from the official website.</p></div>
 
-<h2>Need Help with ${app}?</h2>
-<p>Contact us on WhatsApp for personalized ${app} setup assistance, free IPTV trials, and the best subscription deals.</p>
+<h2>${t(langCode, 'article_get_help', { APP: app })}</h2>
+<p>${t(langCode, 'article_need_help_desc')}</p>
 <div class="cta-section" style="margin:30px 0;padding:30px;text-align:center;background:linear-gradient(135deg,#0d47a1,#1a1a3e);border-radius:12px">
-<h3 style="color:white;margin-bottom:10px">💬 Get ${app} Setup Help</h3>
-<p style="color:#ccc;margin-bottom:20px">Contact us on WhatsApp for instant support, free trial, and best IPTV deals</p>
-<a href="https://wa.me/${WHATSAPP}?text=Hi%21%20I%20need%20help%20installing%20${encodeURIComponent(app)}" target="_blank" style="display:inline-block;padding:12px 30px;background:#25d366;color:white;border-radius:50px;text-decoration:none;font-weight:700">💬 Chat on WhatsApp</a>
+<h3 style="color:white;margin-bottom:10px">💬 ${t(langCode, 'article_cta_heading')}</h3>
+<p style="color:#ccc;margin-bottom:20px">${t(langCode, 'article_cta_desc')}</p>
+<a href="https://wa.me/${WHATSAPP}?text=Hi%21%20I%20need%20help%20installing%20${encodeURIComponent(app)}" target="_blank" style="display:inline-block;padding:12px 30px;background:#25d366;color:white;border-radius:50px;text-decoration:none;font-weight:700">💬 ${t(langCode, 'article_cta_btn')}</a>
 </div>
-<p><strong>Related Guides:</strong> <a href="/${langCode}/${slugify(`Best IPTV Apps for ${device} 2026`)}-1.html">Best IPTV Apps for ${device}</a> | <a href="/${langCode}/${slugify(`How to Set Up IPTV on ${device}`)}-1.html">Setup IPTV on ${device}</a></p>
+<p><strong>${t(langCode, 'article_related')}</strong> <a href="/${langCode}/${slugify(`Best IPTV Apps for ${device} 2026`)}-1.html">Best IPTV Apps for ${device}</a> | <a href="/${langCode}/${slugify(`How to Set Up IPTV on ${device}`)}-1.html">Setup IPTV on ${device}</a></p>
 `;
   } else if (title.includes('Set Up IPTV on')) {
     excerpt = `Complete step by step guide to set up IPTV on ${device}. Learn how to install IPTV apps, configure playlists, and start watching on ${device}.`;
@@ -395,14 +406,14 @@ function generateArticle(index, langCode) {
 <div class="faq-item"><h3>What internet speed do I need for IPTV on ${device}?</h3><p>For HD content: 25 Mbps minimum. For 4K: 50 Mbps minimum. A wired connection is recommended for best performance.</p></div>
 <div class="faq-item"><h3>Do I need a VPN for IPTV on ${device}?</h3><p>A VPN can help bypass ISP throttling and protect your privacy. Choose a fast VPN with servers near your location.</p></div>
 
-<h2>Need Help Setting Up IPTV on ${device}?</h2>
-<p>Contact us on WhatsApp for personalized assistance, free IPTV trials, and the best subscription deals available.</p>
+<h2>${t(langCode, 'article_need_help')}</h2>
+<p>${t(langCode, 'article_need_help_desc')}</p>
 <div class="cta-section" style="margin:30px 0;padding:30px;text-align:center;background:linear-gradient(135deg,#0d47a1,#1a1a3e);border-radius:12px">
-<h3 style="color:white;margin-bottom:10px">💬 Need ${device} IPTV Help?</h3>
-<p style="color:#ccc;margin-bottom:20px">Get instant help on WhatsApp. Free trial and setup assistance included.</p>
-<a href="https://wa.me/${WHATSAPP}?text=Hi%21%20I%20need%20help%20setting%20up%20IPTV%20on%20my%20${encodeURIComponent(device)}" target="_blank" style="display:inline-block;padding:12px 30px;background:#25d366;color:white;border-radius:50px;text-decoration:none;font-weight:700">💬 Chat on WhatsApp</a>
+<h3 style="color:white;margin-bottom:10px">💬 ${t(langCode, 'article_cta_heading')}</h3>
+<p style="color:#ccc;margin-bottom:20px">${t(langCode, 'article_cta_desc')}</p>
+<a href="https://wa.me/${WHATSAPP}?text=Hi%21%20I%20need%20help%20setting%20up%20IPTV%20on%20my%20${encodeURIComponent(device)}" target="_blank" style="display:inline-block;padding:12px 30px;background:#25d366;color:white;border-radius:50px;text-decoration:none;font-weight:700">💬 ${t(langCode, 'article_cta_btn')}</a>
 </div>
-<p><strong>Related Guides:</strong> <a href="/${langCode}/${slugify(`How to Install ${app} on Any Device`)}-1.html">How to Install ${app}</a> | <a href="/${langCode}/${slugify(`Best IPTV Apps for ${device} 2026`)}-1.html">Best Apps for ${device}</a></p>
+<p><strong>${t(langCode, 'article_related')}</strong> <a href="/${langCode}/${slugify(`How to Install ${app} on Any Device`)}-1.html">How to Install ${app}</a> | <a href="/${langCode}/${slugify(`Best IPTV Apps for ${device} 2026`)}-1.html">Best Apps for ${device}</a></p>
 `;
   } else if (title.includes('Best IPTV Service Provider')) {
     excerpt = `Find the best IPTV service provider in ${country.name}. Compare top IPTV services for ${country.name} channels, pricing, and features. Watch ${country.name} TV anywhere.`;
@@ -463,14 +474,14 @@ function generateArticle(index, langCode) {
 <div class="faq-item"><h3>Can I watch ${country.name} TV abroad with IPTV?</h3><p>Yes! IPTV works anywhere in the world with an internet connection. You can watch ${country.name} channels from any country.</p></div>
 <div class="faq-item"><h3>How much does IPTV cost in ${country.name}?</h3><p>Prices vary by provider. Expect to pay between $5-15/month for a quality service with ${country.name} channels.</p></div>
 
-<h2>Get the Best IPTV Service for ${country.name}</h2>
-<p>Contact us on WhatsApp to get a free trial and the best subscription deals for ${country.name} channels.</p>
+<h2>${t(langCode, 'article_cta_heading')}</h2>
+<p>${t(langCode, 'article_need_help_desc')}</p>
 <div class="cta-section" style="margin:30px 0;padding:30px;text-align:center;background:linear-gradient(135deg,#0d47a1,#1a1a3e);border-radius:12px">
-<h3 style="color:white;margin-bottom:10px">🇲🇦 Best IPTV for ${country.name}</h3>
-<p style="color:#ccc;margin-bottom:20px">Free trial available. Contact us on WhatsApp now!</p>
-<a href="https://wa.me/${WHATSAPP}?text=Hi%21%20I%20want%20the%20best%20IPTV%20for%20${encodeURIComponent(country.name)}" target="_blank" style="display:inline-block;padding:12px 30px;background:#25d366;color:white;border-radius:50px;text-decoration:none;font-weight:700">💬 Chat on WhatsApp</a>
+<h3 style="color:white;margin-bottom:10px">💬 ${t(langCode, 'article_cta_heading')}</h3>
+<p style="color:#ccc;margin-bottom:20px">${t(langCode, 'article_cta_desc')}</p>
+<a href="https://wa.me/${WHATSAPP}?text=Hi%21%20I%20want%20the%20best%20IPTV%20for%20${encodeURIComponent(country.name)}" target="_blank" style="display:inline-block;padding:12px 30px;background:#25d366;color:white;border-radius:50px;text-decoration:none;font-weight:700">💬 ${t(langCode, 'article_cta_btn')}</a>
 </div>
-<p><strong>Related:</strong> <a href="/${langCode}/${slugify(`How to Set Up IPTV on ${device}`)}-1.html">IPTV Setup Guide</a> | <a href="/${langCode}/${slugify(`Best IPTV Apps for Smart TV 2026`)}-1.html">Best IPTV Apps</a></p>
+<p><strong>${t(langCode, 'article_related')}</strong> <a href="/${langCode}/${slugify(`How to Set Up IPTV on ${device}`)}-1.html">IPTV Setup Guide</a> | <a href="/${langCode}/${slugify(`Best IPTV Apps for Smart TV 2026`)}-1.html">Best IPTV Apps</a></p>
 `;
   } else if (FAQ_QUESTIONS.some(f => title.startsWith(f.q.substring(0, 20)))) {
     excerpt = `${faqItem.q} - Detailed answer and complete guide about IPTV. Learn everything about this common IPTV question.`;
@@ -498,12 +509,12 @@ function generateArticle(index, langCode) {
 <li><a href="/${langCode}/${slugify(`How to Install ${app} on Any Device`)}-1.html">Install ${app}</a></li>
 </ul>
 
-<h2>Need More Help?</h2>
-<p>Contact our team on WhatsApp for personalized assistance with your IPTV questions.</p>
+<h2>${t(langCode, 'article_need_help')}</h2>
+<p>${t(langCode, 'article_need_help_desc')}</p>
 <div class="cta-section" style="margin:30px 0;padding:30px;text-align:center;background:linear-gradient(135deg,#0d47a1,#1a1a3e);border-radius:12px">
-<h3 style="color:white;margin-bottom:10px">💬 Have IPTV Questions?</h3>
-<p style="color:#ccc;margin-bottom:20px">We answer all your IPTV questions on WhatsApp. Free consultation!</p>
-<a href="https://wa.me/${WHATSAPP}?text=Hi%21%20I%20have%20a%20question%20about%20${encodeURIComponent(faqItem.q.substring(0, 50))}" target="_blank" style="display:inline-block;padding:12px 30px;background:#25d366;color:white;border-radius:50px;text-decoration:none;font-weight:700">💬 Ask on WhatsApp</a>
+<h3 style="color:white;margin-bottom:10px">💬 ${t(langCode, 'article_cta_heading')}</h3>
+<p style="color:#ccc;margin-bottom:20px">${t(langCode, 'article_cta_desc')}</p>
+<a href="https://wa.me/${WHATSAPP}?text=Hi%21%20I%20have%20a%20question%20about%20${encodeURIComponent(faqItem.q.substring(0, 50))}" target="_blank" style="display:inline-block;padding:12px 30px;background:#25d366;color:white;border-radius:50px;text-decoration:none;font-weight:700">💬 ${t(langCode, 'article_cta_btn')}</a>
 </div>
 `;
   } else {
@@ -528,12 +539,12 @@ function generateArticle(index, langCode) {
 
 <div class="faq-item"><h3>Common Questions</h3><p>For answers to common IPTV questions, check our <a href="/${langCode}/${slugify(faqItem.q.substring(0, 30))}-1.html">FAQ section</a> covering ${faqItem.q.toLowerCase()}.</p></div>
 
-<h2>Get Started Today</h2>
-<p>Contact us on WhatsApp for free trials, the best subscription deals, and personalized setup assistance.</p>
+<h2>${t(langCode, 'article_cta_heading')}</h2>
+<p>${t(langCode, 'article_need_help_desc')}</p>
 <div class="cta-section" style="margin:30px 0;padding:30px;text-align:center;background:linear-gradient(135deg,#0d47a1,#1a1a3e);border-radius:12px">
-<h3 style="color:white;margin-bottom:10px">💬 Start Your IPTV Journey</h3>
-<p style="color:#ccc;margin-bottom:20px">Free trial + setup help on WhatsApp. Join thousands of satisfied customers.</p>
-<a href="https://wa.me/${WHATSAPP}?text=Hi%21%20I%20want%20to%20start%20with%20IPTV" target="_blank" style="display:inline-block;padding:12px 30px;background:#25d366;color:white;border-radius:50px;text-decoration:none;font-weight:700">💬 Chat on WhatsApp</a>
+<h3 style="color:white;margin-bottom:10px">💬 ${t(langCode, 'article_cta_heading')}</h3>
+<p style="color:#ccc;margin-bottom:20px">${t(langCode, 'article_cta_desc')}</p>
+<a href="https://wa.me/${WHATSAPP}?text=Hi%21%20I%20want%20to%20start%20with%20IPTV" target="_blank" style="display:inline-block;padding:12px 30px;background:#25d366;color:white;border-radius:50px;text-decoration:none;font-weight:700">💬 ${t(langCode, 'article_cta_btn')}</a>
 </div>
 `;
   }
@@ -628,18 +639,18 @@ ${langLinks}
 <script type="application/ld+json">${schemaFAQ}</script>
 <script type="application/ld+json">${schemaWebSite}</script>
 <script type="application/ld+json">${schemaOrg}</script>
-<style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0f0f23;color:#e0e0e0;line-height:1.7;margin:0;padding:0}.container{max-width:1200px;margin:0 auto;padding:0 20px}.header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:15px 0;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.05)}.header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}.logo{font-size:28px;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}.logo span{color:#00c853}.nav{display:flex;gap:25px;flex-wrap:wrap}.nav a{color:#ccc;text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;text-transform:uppercase;letter-spacing:1px}.nav a:hover,.nav a.active{color:#00c853}.lang-switch{display:flex;gap:5px;flex-wrap:wrap}.lang-switch a{padding:4px 10px;border-radius:4px;font-size:12px;font-weight:600;text-decoration:none;color:#aaa;border:1px solid #333;transition:all .3s}.lang-switch a.active,.lang-switch a:hover{color:#fff;border-color:#00c853;background:rgba(0,200,83,0.1)}.breadcrumb{padding:15px 0;font-size:13px;color:#888}.breadcrumb a{color:#00c853;text-decoration:none}.content-area{min-height:400px;padding:40px 0}.two-col{display:grid;grid-template-columns:1fr 300px;gap:30px}.article-content{background:linear-gradient(135deg,#1e1e3a,#16213e);border-radius:12px;padding:40px;border:1px solid rgba(255,255,255,0.05)}.article-content h1{font-size:32px;color:#fff;margin-bottom:20px}.article-content h2{font-size:24px;color:#fff;margin:30px 0 15px}.article-content h3{font-size:20px;color:#fff;margin:25px 0 12px}.article-content p{color:#bbb;margin-bottom:15px;font-size:16px;line-height:1.8}.article-content ul,.article-content li{color:#bbb;margin-bottom:8px}.article-content a{color:#00c853}.article-content blockquote{border-left:4px solid #00c853;padding:15px 20px;margin:20px 0;background:rgba(0,200,83,0.05);border-radius:0 8px 8px 0}.card-meta{display:flex;gap:15px;flex-wrap:wrap;color:#888;font-size:13px}.card-meta a{color:#00c853;text-decoration:none}.sidebar{background:linear-gradient(135deg,#1e1e3a,#16213e);border-radius:12px;padding:25px;margin-bottom:25px;border:1px solid rgba(255,255,255,0.05)}.sidebar h2{color:#fff;font-size:16px;margin-bottom:15px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.1)}.sidebar ul{list-style:none;padding:0;margin:0}.sidebar ul li{margin-bottom:8px}.sidebar ul li a{color:#00c853;text-decoration:none;font-size:14px}.sidebar ul li a:hover{text-decoration:underline}.tag-cloud-sidebar{display:flex;flex-wrap:wrap;gap:6px}.tag-cloud-sidebar a{padding:3px 10px;background:rgba(0,200,83,0.1);color:#00c853;border-radius:20px;font-size:11px;text-decoration:none;transition:all .3s}.tag-cloud-sidebar a:hover{background:rgba(0,200,83,0.2)}.newsletter-form{display:flex;gap:8px}.newsletter-form input{flex:1;padding:10px;border-radius:6px;border:1px solid #333;background:#0f0f23;color:#fff;font-size:13px}.newsletter-form button{padding:10px 16px;background:#00c853;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:600}.disclaimer-box{background:rgba(255,193,7,0.1);border:1px solid rgba(255,193,7,0.2);border-radius:8px;padding:15px;margin-top:30px;font-size:13px;color:#aaa}.disclaimer-box a{color:#ffc107}.footer{background:#0f0f23;padding:50px 0 20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px}.footer h2{color:#fff;font-size:16px;margin-bottom:15px}.footer p{color:#888;font-size:13px;line-height:1.6}.footer a{display:block;color:#888;text-decoration:none;font-size:13px;margin-bottom:8px;transition:color .3s}.footer a:hover{color:#00c853}.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-bottom p{color:#666;font-size:12px}.whatsapp-float{position:fixed;bottom:20px;right:20px;z-index:999}.whatsapp-float a{display:flex;align-items:center;justify-content:center;width:56px;height:56px;background:#25d366;border-radius:50%;color:#fff;box-shadow:0 4px 12px rgba(37,211,102,0.4);transition:all .3s}.whatsapp-float a:hover{transform:scale(1.1)}.tooltip{position:absolute;right:70px;top:50%;transform:translateY(-50%);background:#333;color:#fff;padding:8px 16px;border-radius:8px;font-size:13px;white-space:nowrap;opacity:0;transition:opacity .3s;pointer-events:none}.whatsapp-float:hover .tooltip{opacity:1}.whatsapp-popup{position:fixed;bottom:90px;right:20px;width:320px;background:#fff;border-radius:12px;box-shadow:0 5px 40px rgba(0,0,0,0.3);z-index:1000;display:none;overflow:hidden}.whatsapp-popup.show{display:block}.whatsapp-popup-header{background:#075e54;color:#fff;padding:15px;display:flex;align-items:center;gap:10px}.whatsapp-popup-header h4{margin:0;font-size:14px}.whatsapp-popup-header p{margin:0;font-size:11px;color:#ccc}.whatsapp-popup-body{background:#e5ddd5;padding:15px;min-height:100px}.whatsapp-popup-body .msg{background:#fff;padding:10px 15px;border-radius:8px;margin-bottom:10px;font-size:13px;color:#333;max-width:80%}.whatsapp-popup-body .msg.reply{background:#dcf8c6;margin-left:auto}.whatsapp-popup-footer{display:flex;padding:10px;border-top:1px solid #eee;background:#fff}.whatsapp-popup-footer input{flex:1;padding:10px;border:1px solid #ddd;border-radius:20px;outline:none;font-size:13px}.whatsapp-popup-footer button{padding:10px 20px;background:#25d366;color:#fff;border:none;border-radius:20px;margin-left:8px;cursor:pointer;font-weight:600}.cookie-consent{position:fixed;bottom:0;left:0;right:0;background:#1a1a3e;padding:15px 0;z-index:9999;display:none;border-top:1px solid rgba(255,255,255,0.1)}.cookie-consent.show{display:block}.cookie-consent .container{display:flex;align-items:center;justify-content:space-between;gap:20px}.cookie-consent p{color:#aaa;font-size:13px;margin:0}.btn-cookie{padding:8px 24px;background:#00c853;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:600;white-space:nowrap}.back-to-top{position:fixed;bottom:90px;right:20px;width:44px;height:44px;background:#00c853;color:#fff;border:none;border-radius:50%;cursor:pointer;font-size:20px;display:none;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,200,83,0.3);z-index:998}.back-to-top.show{display:flex}.faq-item{cursor:pointer}.faq-item .faq-answer{display:none;padding:10px 0 0 20px;color:#bbb}.faq-item.active .faq-answer{display:block}@media(max-width:768px){.two-col{grid-template-columns:1fr}.header .container{flex-direction:column;text-align:center}.nav{justify-content:center;gap:15px}.lang-switch{justify-content:center}.article-content{padding:20px}.article-content h1{font-size:24px}.article-content h2{font-size:20px}}</style>
+<style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0f0f23;color:#e0e0e0;line-height:1.7;margin:0;padding:0}.container{max-width:1200px;margin:0 auto;padding:0 20px}.header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:15px 0;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.05)}.header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}.logo{font-size:28px;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}.logo span{color:#00c853}.nav{display:flex;gap:25px;flex-wrap:wrap}.nav a{color:#ccc;text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;text-transform:uppercase;letter-spacing:1px}.nav a:hover,.nav a.active{color:#00c853}.lang-switch{display:flex;gap:5px;flex-wrap:wrap}.lang-switch a{padding:4px 10px;border-radius:4px;font-size:12px;font-weight:600;text-decoration:none;color:#aaa;border:1px solid #333;transition:all .3s}.lang-switch a.active,.lang-switch a:hover{color:#fff;border-color:#00c853;background:rgba(0,200,83,0.1)}.breadcrumb{padding:15px 0;font-size:13px;color:#888}.breadcrumb a{color:#00c853;text-decoration:none}.content-area{min-height:400px;padding:40px 0}.two-col{display:grid;grid-template-columns:1fr 300px;gap:30px}.article-content{background:linear-gradient(135deg,#1e1e3a,#16213e);border-radius:12px;padding:40px;border:1px solid rgba(255,255,255,0.05)}.article-content h1{font-size:32px;color:#fff;margin-bottom:20px}.article-content h2{font-size:24px;color:#fff;margin:30px 0 15px}.article-content h3{font-size:20px;color:#fff;margin:25px 0 12px}.article-content p{color:#bbb;margin-bottom:15px;font-size:16px;line-height:1.8}.article-content ul,.article-content li{color:#bbb;margin-bottom:8px}.article-content a{color:#00c853}.article-content blockquote{border-left:4px solid #00c853;padding:15px 20px;margin:20px 0;background:rgba(0,200,83,0.05);border-radius:0 8px 8px 0}.card-meta{display:flex;gap:15px;flex-wrap:wrap;color:#888;font-size:13px}.card-meta a{color:#00c853;text-decoration:none}.sidebar{background:linear-gradient(135deg,#1e1e3a,#16213e);border-radius:12px;padding:25px;margin-bottom:25px;border:1px solid rgba(255,255,255,0.05)}.sidebar h2{color:#fff;font-size:16px;margin-bottom:15px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.1)}.sidebar ul{list-style:none;padding:0;margin:0}.sidebar ul li{margin-bottom:8px}.sidebar ul li a{color:#00c853;text-decoration:none;font-size:14px}.sidebar ul li a:hover{text-decoration:underline}.tag-cloud-sidebar{display:flex;flex-wrap:wrap;gap:6px}.tag-cloud-sidebar a{padding:3px 10px;background:rgba(0,200,83,0.1);color:#00c853;border-radius:20px;font-size:11px;text-decoration:none;transition:all .3s}.tag-cloud-sidebar a:hover{background:rgba(0,200,83,0.2)}.newsletter-form{display:flex;gap:8px}.newsletter-form input{flex:1;padding:10px;border-radius:6px;border:1px solid #333;background:#0f0f23;color:#fff;font-size:13px}.newsletter-form button{padding:10px 16px;background:#00c853;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:600}.disclaimer-box{background:rgba(255,193,7,0.1);border:1px solid rgba(255,193,7,0.2);border-radius:8px;padding:15px;margin-top:30px;font-size:13px;color:#aaa}.disclaimer-box a{color:#ffc107}.footer{background:#0f0f23;padding:50px 0 20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px}.footer h2{color:#fff;font-size:16px;margin-bottom:15px}.footer p{color:#888;font-size:13px;line-height:1.6}.footer a{display:block;color:#888;text-decoration:none;font-size:13px;margin-bottom:8px;transition:color .3s}.footer a:hover{color:#00c853}.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-bottom p{color:#666;font-size:12px}.whatsapp-float{position:fixed;bottom:20px;right:20px;z-index:999}.whatsapp-float a{display:flex;align-items:center;justify-content:center;width:56px;height:56px;background:#25d366;border-radius:50%;color:#fff;box-shadow:0 4px 12px rgba(37,211,102,0.4);transition:all .3s}.whatsapp-float a:hover{transform:scale(1.1)}.tooltip{position:absolute;right:70px;top:50%;transform:translateY(-50%);background:#333;color:#fff;padding:8px 16px;border-radius:8px;font-size:13px;white-space:nowrap;opacity:0;transition:opacity .3s;pointer-events:none}.whatsapp-float:hover .tooltip{opacity:1}.whatsapp-popup{position:fixed;bottom:90px;right:20px;width:320px;background:#fff;border-radius:12px;box-shadow:0 5px 40px rgba(0,0,0,0.3);z-index:1000;display:none;overflow:hidden}.whatsapp-popup.show{display:block}.whatsapp-popup-header{background:#075e54;color:#fff;padding:15px;display:flex;align-items:center;gap:10px}.whatsapp-popup-header h4{margin:0;font-size:14px}.whatsapp-popup-header p{margin:0;font-size:11px;color:#ccc}.whatsapp-popup-body{background:#e5ddd5;padding:15px;min-height:100px}.whatsapp-popup-body .msg{background:#fff;padding:10px 15px;border-radius:8px;margin-bottom:10px;font-size:13px;color:#333;max-width:80%}.whatsapp-popup-body .msg.reply{background:#dcf8c6;margin-left:auto}.whatsapp-popup-footer{display:flex;padding:10px;border-top:1px solid #eee;background:#fff}.whatsapp-popup-footer input{flex:1;padding:10px;border:1px solid #ddd;border-radius:20px;outline:none;font-size:13px}.whatsapp-popup-footer button{padding:10px 20px;background:#25d366;color:#fff;border:none;border-radius:20px;margin-left:8px;cursor:pointer;font-weight:600}.cookie-consent{position:fixed;bottom:0;left:0;right:0;background:#1a1a3e;padding:15px 80px 15px 20px;z-index:99999;display:none;border-top:1px solid rgba(255,255,255,0.1)}.cookie-consent.show{display:block}.cookie-consent .container{display:flex;align-items:center;justify-content:space-between;gap:20px}.cookie-consent p{color:#aaa;font-size:13px;margin:0}.btn-cookie{padding:8px 24px;background:#00c853;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:600;white-space:nowrap;pointer-events:auto;position:relative;z-index:99999}.back-to-top{position:fixed;bottom:90px;right:20px;width:44px;height:44px;background:#00c853;color:#fff;border:none;border-radius:50%;cursor:pointer;font-size:20px;display:none;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,200,83,0.3);z-index:998}.back-to-top.show{display:flex}.faq-item{cursor:pointer}.faq-item .faq-answer{display:none;padding:10px 0 0 20px;color:#bbb}.faq-item.active .faq-answer{display:block}@media(max-width:768px){.two-col{grid-template-columns:1fr}.header .container{flex-direction:column;text-align:center}.nav{justify-content:center;gap:15px}.lang-switch{justify-content:center}.article-content{padding:20px}.article-content h1{font-size:24px}.article-content h2{font-size:20px}}</style>
 </head>
 <body>
 <header class="header">
 <div class="container">
 <a href="/${langCode}/" class="logo">📺 <span>IPTV</span> Pro Guide</a>
 <nav class="nav">
-<a href="/${langCode}/">Home</a>
-<a href="/blog/${langCode}/">Blog</a>
-<a href="/${langCode}/categories/">Categories</a>
-<a href="/${langCode}/about.html">About</a>
-<a href="/${langCode}/contact.html">Contact</a>
+<a href="/${langCode}/">${t(langCode, 'nav_home')}</a>
+<a href="/blog/${langCode}/">${t(langCode, 'nav_blog')}</a>
+<a href="/${langCode}/categories/">${t(langCode, 'nav_categories')}</a>
+<a href="/${langCode}/about.html">${t(langCode, 'nav_about')}</a>
+<a href="/${langCode}/contact.html">${t(langCode, 'nav_contact')}</a>
 </nav>
 <div class="lang-switch">
 ${LANGUAGES.map(l => `<a href="/${l.code}/${slug}.html" data-lang="${l.code}"${l.code === langCode ? ' class="active"' : ''}>${l.flag} ${l.code.toUpperCase()}</a>`).join('\n')}
@@ -649,7 +660,7 @@ ${LANGUAGES.map(l => `<a href="/${l.code}/${slug}.html" data-lang="${l.code}"${l
 
 <section class="breadcrumb">
 <div class="container">
-<a href="/${langCode}/">Home</a> <span>›</span> <a href="/blog/${langCode}/">Blog</a> <span>›</span> <a href="/${langCode}/categories/${category.slug}.html">${category.name}</a> <span>›</span> ${title}
+<a href="/${langCode}/">${t(langCode, 'breadcrumb_home')}</a> <span>›</span> <a href="/blog/${langCode}/">${t(langCode, 'breadcrumb_blog')}</a> <span>›</span> <a href="/${langCode}/categories/${category.slug}.html">${category.name}</a> <span>›</span> ${title}
 </div>
 </section>
 
@@ -662,56 +673,56 @@ ${LANGUAGES.map(l => `<a href="/${l.code}/${slug}.html" data-lang="${l.code}"${l
 <div class="card-meta" style="margin-bottom:20px">
 <span>📅 ${date}</span>
 <span>📂 <a href="/${langCode}/categories/${category.slug}.html">${category.name}</a></span>
-<span>👁️ ${Math.floor(Math.random() * 2000) + 200} views</span>
+<span>👁️ ${Math.floor(Math.random() * 2000) + 200} ${t(langCode, 'article_views')}</span>
 </div>
 ${content}
 
 <div class="disclaimer-box">
-<strong>⚠️ Disclaimer:</strong> We do not host or stream any copyrighted content. All content is provided by third-party providers. Users are responsible for ensuring they have the rights to view content in their jurisdiction. This website is for educational and informational purposes only. <a href="/${langCode}/dmca.html">DMCA Notice</a> | <a href="/${langCode}/disclaimer.html">Full Disclaimer</a>
+<strong>⚠️ ${t(langCode, 'article_disclaimer_title')}</strong> ${t(langCode, 'article_disclaimer_text')} <a href="/${langCode}/dmca.html">${t(langCode, 'article_dmca')}</a> | <a href="/${langCode}/disclaimer.html">${t(langCode, 'article_full_disclaimer')}</a>
 </div>
 </div>
 <aside>
 <div class="sidebar">
-<h2>📂 Category</h2>
+<h2>📂 ${t(langCode, 'sidebar_category')}</h2>
 <ul>
 <li><a href="/${langCode}/categories/${category.slug}.html">${category.icon} ${category.name}</a></li>
 </ul>
 </div>
 <div class="sidebar">
-<h2>🌍 Country Guide</h2>
+<h2>🌍 ${t(langCode, 'sidebar_country')}</h2>
 <ul>
 <li><a href="/${langCode}/${slugify(`Best IPTV Service Provider in ${country.name}`)}-1.html">🇲🇦 IPTV in ${country.name}</a></li>
 </ul>
 </div>
 <div class="sidebar">
-<h2>📱 Recommended App</h2>
+<h2>📱 ${t(langCode, 'sidebar_app')}</h2>
 <ul>
 <li><a href="/${langCode}/${slugify(`How to Install ${app} on Any Device`)}-1.html">📥 Install ${app}</a></li>
 </ul>
 </div>
 <div class="sidebar">
-<h2>🖥️ Device Setup</h2>
+<h2>🖥️ ${t(langCode, 'sidebar_device')}</h2>
 <ul>
 <li><a href="/${langCode}/${slugify(`How to Set Up IPTV on ${device}`)}-1.html">🔧 Setup ${device}</a></li>
 </ul>
 </div>
 <div class="sidebar">
-<h2>🏷️ Tags</h2>
+<h2>🏷️ ${t(langCode, 'sidebar_tags')}</h2>
 <div class="tag-cloud-sidebar">
 ${keywordStr.split(', ').slice(0, 20).map(k => `<a href="/${langCode}/search.html?q=${encodeURIComponent(k)}">${k}</a>`).join('')}
 </div>
 </div>
 <div class="sidebar">
-<h2>💬 Need Help?</h2>
-<p style="color:#888;font-size:13px;margin-bottom:12px">Contact us on WhatsApp for instant support and the best IPTV deals.</p>
-<a href="https://wa.me/${WHATSAPP}?text=Hi%21%20I%20need%20help%20with%20${encodeURIComponent(title.substring(0, 60))}" target="_blank" style="display:block;padding:12px;background:#25d366;color:white;border-radius:8px;text-decoration:none;font-weight:600;text-align:center">💬 WhatsApp Support</a>
+<h2>💬 ${t(langCode, 'sidebar_help_title')}</h2>
+<p style="color:#888;font-size:13px;margin-bottom:12px">${t(langCode, 'sidebar_help_desc')}</p>
+<a href="https://wa.me/${WHATSAPP}?text=Hi%21%20I%20need%20help%20with%20${encodeURIComponent(title.substring(0, 60))}" target="_blank" style="display:block;padding:12px;background:#25d366;color:white;border-radius:8px;text-decoration:none;font-weight:600;text-align:center">💬 ${t(langCode, 'sidebar_help_btn')}</a>
 </div>
 <div class="sidebar">
-<h2>📧 Newsletter</h2>
-<p style="color:#888;font-size:13px;margin-bottom:12px">Get the latest IPTV guides and tips</p>
+<h2>📧 ${t(langCode, 'sidebar_newsletter_title')}</h2>
+<p style="color:#888;font-size:13px;margin-bottom:12px">${t(langCode, 'sidebar_newsletter_desc')}</p>
 <form class="newsletter-form">
-<input type="email" placeholder="Your email" required>
-<button type="submit">Subscribe</button>
+<input type="email" placeholder="${t(langCode, 'sidebar_newsletter_placeholder')}" required>
+<button type="submit">${t(langCode, 'sidebar_newsletter_btn')}</button>
 </form>
 </div>
 </aside>
@@ -722,39 +733,39 @@ ${keywordStr.split(', ').slice(0, 20).map(k => `<a href="/${langCode}/search.htm
 <footer class="footer">
 <div class="container">
 <div class="footer-grid">
-<div><h2>${SITE_NAME}</h2><p>Your trusted source for IPTV guides, tutorials, and reviews. Educational content only.</p></div>
-<div><h2>Quick Links</h2><a href="/${langCode}/">Home</a><a href="/blog/${langCode}/">Blog</a><a href="/${langCode}/categories/">Categories</a><a href="/${langCode}/about.html">About</a><a href="/${langCode}/contact.html">Contact</a></div>
-<div><h2>Legal</h2><a href="/${langCode}/privacy-policy.html">Privacy Policy</a><a href="/${langCode}/terms.html">Terms of Service</a><a href="/${langCode}/dmca.html">DMCA Notice</a><a href="/${langCode}/disclaimer.html">Disclaimer</a></div>
-<div><h2>Follow Us</h2><a href="https://wa.me/${WHATSAPP}" target="_blank">💬 WhatsApp</a></div>
+<div><h2>${SITE_NAME}</h2><p>${t(langCode, 'footer_desc')}</p></div>
+<div><h2>${t(langCode, 'footer_quicklinks')}</h2><a href="/${langCode}/">${t(langCode, 'nav_home')}</a><a href="/blog/${langCode}/">${t(langCode, 'nav_blog')}</a><a href="/${langCode}/categories/">${t(langCode, 'nav_categories')}</a><a href="/${langCode}/about.html">${t(langCode, 'nav_about')}</a><a href="/${langCode}/contact.html">${t(langCode, 'nav_contact')}</a></div>
+<div><h2>${t(langCode, 'footer_legal')}</h2><a href="/${langCode}/privacy-policy.html">${t(langCode, 'footer_privacy')}</a><a href="/${langCode}/terms.html">${t(langCode, 'footer_terms')}</a><a href="/${langCode}/dmca.html">${t(langCode, 'footer_dmca')}</a><a href="/${langCode}/disclaimer.html">${t(langCode, 'footer_disclaimer')}</a></div>
+<div><h2>${t(langCode, 'footer_follow')}</h2><a href="https://wa.me/${WHATSAPP}" target="_blank">💬 ${t(langCode, 'footer_whatsapp')}</a></div>
 </div>
-<div class="footer-bottom"><p>© 2026 ${SITE_NAME}. All rights reserved. We do not host or stream any copyrighted content.</p></div>
+<div class="footer-bottom"><p>${t(langCode, 'footer_copyright')}</p></div>
 </div>
 </footer>
 
 <div class="whatsapp-float">
-<div class="tooltip">💬 Chat with us!</div>
+<div class="tooltip">${t(langCode, 'whatsapp_tooltip')}</div>
 <a href="#" id="whatsappBtn"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.967-.94 1.165-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.93 9.93 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.889 0-3.633-.656-5.008-1.756l-3.4 1.06 1.06-3.4A7.94 7.94 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg></a>
 </div>
 
 <div class="whatsapp-popup" id="whatsappPopup">
 <div class="whatsapp-popup-header">
 <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%2325d366'/><text x='50' y='65' text-anchor='middle' font-size='40' fill='white'>📺</text></svg>" alt="Support">
-<div><h4>IPTV Pro Support</h4><p>Typically replies within 5 minutes</p></div>
+<div><h4>${t(langCode, 'whatsapp_popup_title')}</h4><p>${t(langCode, 'whatsapp_popup_subtitle')}</p></div>
 </div>
 <div class="whatsapp-popup-body">
-<div class="msg">👋 Hello! Welcome to IPTV Pro Guide. How can we help you today?</div>
-<div class="msg reply">Hi! I'm interested in IPTV services. Can you tell me more?</div>
+<div class="msg">👋 ${t(langCode, 'whatsapp_greeting')}</div>
+<div class="msg reply">${t(langCode, 'whatsapp_reply')}</div>
 </div>
 <div class="whatsapp-popup-footer">
-<input type="text" id="whatsappInput" placeholder="Type a message..." value="Hi! I am interested in your IPTV services.">
-<button id="whatsappSend">Send</button>
+<input type="text" id="whatsappInput" placeholder="${t(langCode, 'whatsapp_placeholder')}" value="${t(langCode, 'whatsapp_default')}">
+<button id="whatsappSend">${t(langCode, 'whatsapp_send')}</button>
 </div>
 </div>
 
 <div class="cookie-consent" id="cookieConsent">
 <div class="container">
-<p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
-<button class="btn-cookie">Accept</button>
+<p>${t(langCode, 'cookie_text')}</p>
+<button class="btn-cookie">${t(langCode, 'cookie_accept')}</button>
 </div>
 </div>
 
@@ -792,14 +803,14 @@ function generateBlogPage(langCode, articles) {
 <html lang="${langCode}" dir="${dir}">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Blog - ${SITE_NAME} (${lang.name})</title>
-<meta name="description" content="Read our latest IPTV articles, guides, and tutorials in ${lang.name}.">
+<title>${t(langCode, 'blog_title', { LANG_NAME: lang.name })}</title>
+<meta name="description" content="${t(langCode, 'blog_meta_desc', { LANG_NAME: lang.name })}">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="${SITE_URL}/blog/${langCode}/">
 ${langLinks}
 <meta property="og:locale" content="${lang.locale}">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Blog - ${SITE_NAME}">
+<meta property="og:title" content="${t(langCode, 'blog_title', { LANG_NAME: lang.name })}">
 <meta property="og:url" content="${SITE_URL}/blog/${langCode}/">
 <meta name="twitter:card" content="summary_large_image">
 <style>body{font-family:system-ui,-apple-system,sans-serif;background:#0f0f23;color:#e0e0e0;line-height:1.7;margin:0;padding:0}.container{max-width:1200px;margin:0 auto;padding:0 20px}.header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:15px 0;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.05)}.header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}.logo{font-size:28px;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}.logo span{color:#00c853}.nav{display:flex;gap:25px;flex-wrap:wrap}.nav a{color:#ccc;text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;text-transform:uppercase;letter-spacing:1px}.nav a:hover{color:#00c853}.lang-switch{display:flex;gap:5px;flex-wrap:wrap}.lang-switch a{padding:4px 10px;border-radius:4px;font-size:12px;font-weight:600;text-decoration:none;color:#aaa;border:1px solid #333;transition:all .3s}.lang-switch a.active,.lang-switch a:hover{color:#fff;border-color:#00c853;background:rgba(0,200,83,0.1)}.page-header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:50px 0;text-align:center;border-bottom:1px solid rgba(255,255,255,0.05)}.page-header h1{font-size:36px;color:#fff;margin-bottom:10px}.page-header p{color:#888;font-size:16px}.content-area{min-height:400px;padding:40px 0}.article-list{display:flex;flex-direction:column;gap:20px}.article-row{display:flex;gap:20px;background:linear-gradient(135deg,#1e1e3a,#16213e);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.05);transition:all .3s}.article-row:hover{transform:translateY(-2px);border-color:rgba(0,200,83,0.2)}.info h2{margin:0 0 8px;font-size:16px}.info h2 a{color:#fff;text-decoration:none}.info h2 a:hover{color:#00c853}.info p{color:#999;font-size:13px;margin:0 0 8px}.info .meta{color:#666;font-size:12px}.card-category{display:inline-block;padding:2px 10px;background:rgba(0,200,83,0.15);color:#00c853;border-radius:20px;font-size:11px;font-weight:600;margin-bottom:8px}.footer{background:#0f0f23;padding:50px 0 20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px}.footer h2{color:#fff;font-size:16px;margin-bottom:15px}.footer p{color:#888;font-size:13px}.footer a{display:block;color:#888;text-decoration:none;font-size:13px;margin-bottom:8px}.footer a:hover{color:#00c853}.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-bottom p{color:#666;font-size:12px}.whatsapp-float{position:fixed;bottom:20px;right:20px;z-index:999}.whatsapp-float a{display:flex;align-items:center;justify-content:center;width:56px;height:56px;background:#25d366;border-radius:50%;color:#fff;box-shadow:0 4px 12px rgba(37,211,102,0.4)}.pagination{display:flex;justify-content:center;gap:8px;margin-top:30px}.pagination a{padding:8px 16px;background:#1e1e3a;color:#00c853;border-radius:6px;text-decoration:none;font-size:14px}.pagination a:hover{background:#00c853;color:#fff}</style>
@@ -807,28 +818,28 @@ ${langLinks}
 <body>
 <header class="header"><div class="container">
 <a href="/${langCode}/" class="logo">📺 <span>IPTV</span> Pro Guide</a>
-<nav class="nav"><a href="/${langCode}/">Home</a><a href="/blog/${langCode}/" class="active">Blog</a><a href="/${langCode}/categories/">Categories</a><a href="/${langCode}/about.html">About</a><a href="/${langCode}/contact.html">Contact</a></nav>
+<nav class="nav"><a href="/${langCode}/">${t(langCode, 'nav_home')}</a><a href="/blog/${langCode}/" class="active">${t(langCode, 'nav_blog')}</a><a href="/${langCode}/categories/">${t(langCode, 'nav_categories')}</a><a href="/${langCode}/about.html">${t(langCode, 'nav_about')}</a><a href="/${langCode}/contact.html">${t(langCode, 'nav_contact')}</a></nav>
 <div class="lang-switch">
 ${LANGUAGES.map(l => `<a href="/blog/${l.code}/" data-lang="${l.code}"${l.code === langCode ? ' class="active"' : ''}>${l.flag} ${l.code.toUpperCase()}</a>`).join('\n')}
 </div>
 </div></header>
 <main>
-<section class="page-header"><div class="container"><h1>📝 Blog - ${lang.name}</h1><p>${langArticles.length} articles in ${lang.name}</p></div></section>
+<section class="page-header"><div class="container"><h1>📝 ${t(langCode, 'blog_heading')}</h1><p>${langArticles.length} ${t(langCode, 'blog_subheading', { LANG_NAME: lang.name })}</p></div></section>
 <section class="content-area"><div class="container">
-<div class="article-list">${rows || '<p style="color:#888;padding:20px">Articles coming soon...</p>'}</div>
+<div class="article-list">${rows || `<p style="color:#888;padding:20px">${t(langCode, 'blog_empty')}</p>`}</div>
 </div></section>
 </main>
 <footer class="footer"><div class="container">
 <div class="footer-grid">
-<div><h2>${SITE_NAME}</h2><p>Your trusted source for IPTV guides.</p></div>
-<div><h2>Quick Links</h2><a href="/${langCode}/">Home</a><a href="/blog/${langCode}/">Blog</a><a href="/${langCode}/categories/">Categories</a></div>
-<div><h2>Legal</h2><a href="/${langCode}/privacy-policy.html">Privacy Policy</a><a href="/${langCode}/terms.html">Terms</a><a href="/${langCode}/dmca.html">DMCA</a><a href="/${langCode}/disclaimer.html">Disclaimer</a></div>
+<div><h2>${SITE_NAME}</h2><p>${t(langCode, 'footer_desc')}</p></div>
+<div><h2>${t(langCode, 'footer_quicklinks')}</h2><a href="/${langCode}/">${t(langCode, 'nav_home')}</a><a href="/blog/${langCode}/">${t(langCode, 'nav_blog')}</a><a href="/${langCode}/categories/">${t(langCode, 'nav_categories')}</a></div>
+<div><h2>${t(langCode, 'footer_legal')}</h2><a href="/${langCode}/privacy-policy.html">${t(langCode, 'footer_privacy')}</a><a href="/${langCode}/terms.html">${t(langCode, 'footer_terms')}</a><a href="/${langCode}/dmca.html">${t(langCode, 'footer_dmca')}</a><a href="/${langCode}/disclaimer.html">${t(langCode, 'footer_disclaimer')}</a></div>
 </div>
-<div class="footer-bottom"><p>© 2026 ${SITE_NAME}. All rights reserved.</p></div>
+<div class="footer-bottom"><p>${t(langCode, 'footer_copyright')}</p></div>
 </div></footer>
 <div class="whatsapp-float"><a href="https://wa.me/${WHATSAPP}?text=Hi%21%20I%20need%20help%20with%20IPTV" target="_blank"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.967-.94 1.165-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.93 9.93 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.889 0-3.633-.656-5.008-1.756l-3.4 1.06 1.06-3.4A7.94 7.94 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg></a></div>
-<div class="cookie-consent" id="cookieConsent"><div class="container"><p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p><button class="btn-cookie">Accept</button></div></div>
-<style>.cookie-consent{position:fixed;bottom:0;left:0;right:0;background:#1a1a3e;padding:15px 0;z-index:9999;display:none;border-top:1px solid rgba(255,255,255,0.1)}.cookie-consent.show{display:block}.cookie-consent .container{display:flex;align-items:center;justify-content:space-between;gap:20px}.cookie-consent p{color:#aaa;font-size:13px;margin:0}.btn-cookie{padding:8px 24px;background:#00c853;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:600;white-space:nowrap}</style>
+<div class="cookie-consent" id="cookieConsent"><div class="container"><p>${t(langCode, 'cookie_text')}</p><button class="btn-cookie">${t(langCode, 'cookie_accept')}</button></div></div>
+<style>.cookie-consent{position:fixed;bottom:0;left:0;right:0;background:#1a1a3e;padding:15px 80px 15px 20px;z-index:99999;display:none;border-top:1px solid rgba(255,255,255,0.1)}.cookie-consent.show{display:block}.cookie-consent .container{display:flex;align-items:center;justify-content:space-between;gap:20px}.cookie-consent p{color:#aaa;font-size:13px;margin:0}.btn-cookie{padding:8px 24px;background:#00c853;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:600;white-space:nowrap;pointer-events:auto;position:relative;z-index:99999}</style>
 <script defer src="/assets/js/main.js"></script>
 </body>
 </html>`;
@@ -852,8 +863,8 @@ function generateCategoryPage(langCode, cat, catArticles) {
 <html lang="${langCode}" dir="${dir}">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>${cat.name} - ${SITE_NAME} (${lang.name})</title>
-<meta name="description" content="${catArticles.length} articles about ${cat.name.toLowerCase()} in ${lang.name}">
+<title>${t(langCode, 'category_title', { CAT_NAME: cat.name, LANG_NAME: lang.name })}</title>
+<meta name="description" content="${t(langCode, 'category_meta_desc', { COUNT: catArticles.length, CAT_NAME: cat.name.toLowerCase(), LANG_NAME: lang.name })}">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="${SITE_URL}/${langCode}/categories/${cat.slug}.html">
 <style>body{font-family:system-ui,-apple-system,sans-serif;background:#0f0f23;color:#e0e0e0;line-height:1.7;margin:0;padding:0}.container{max-width:1200px;margin:0 auto;padding:0 20px}.header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:15px 0;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.05)}.header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}.logo{font-size:28px;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}.logo span{color:#00c853}.nav{display:flex;gap:25px;flex-wrap:wrap}.nav a{color:#ccc;text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;text-transform:uppercase;letter-spacing:1px}.nav a:hover{color:#00c853}.lang-switch{display:flex;gap:5px;flex-wrap:wrap}.lang-switch a{padding:4px 10px;border-radius:4px;font-size:12px;font-weight:600;text-decoration:none;color:#aaa;border:1px solid #333;transition:all .3s}.lang-switch a.active,.lang-switch a:hover{color:#fff;border-color:#00c853;background:rgba(0,200,83,0.1)}.page-header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:50px 0;text-align:center;border-bottom:1px solid rgba(255,255,255,0.05)}.page-header h1{font-size:36px;color:#fff;margin-bottom:10px}.page-header p{color:#888;font-size:16px}.content-area{min-height:400px;padding:40px 0}.article-list{display:flex;flex-direction:column;gap:20px}.article-row{display:flex;gap:20px;background:linear-gradient(135deg,#1e1e3a,#16213e);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.05);transition:all .3s}.article-row:hover{transform:translateY(-2px);border-color:rgba(0,200,83,0.2)}.thumb{font-size:40px;display:flex;align-items:center;justify-content:center;min-width:60px}.info h2{margin:0 0 8px;font-size:16px}.info h2 a{color:#fff;text-decoration:none}.info h2 a:hover{color:#00c853}.info p{color:#999;font-size:13px;margin:0 0 8px}.info .meta{color:#666;font-size:12px}.card-category{display:inline-block;padding:2px 10px;background:rgba(0,200,83,0.15);color:#00c853;border-radius:20px;font-size:11px;font-weight:600;margin-bottom:8px}.footer{background:#0f0f23;padding:50px 0 20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px}.footer h2{color:#fff;font-size:16px;margin-bottom:15px}.footer p{color:#888;font-size:13px}.footer a{display:block;color:#888;text-decoration:none;font-size:13px;margin-bottom:8px}.footer a:hover{color:#00c853}.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-bottom p{color:#666;font-size:12px}.whatsapp-float{position:fixed;bottom:20px;right:20px;z-index:999}.whatsapp-float a{display:flex;align-items:center;justify-content:center;width:56px;height:56px;background:#25d366;border-radius:50%;color:#fff;box-shadow:0 4px 12px rgba(37,211,102,0.4)}</style>
@@ -861,27 +872,27 @@ function generateCategoryPage(langCode, cat, catArticles) {
 <body>
 <header class="header"><div class="container">
 <a href="/${langCode}/" class="logo">📺 <span>IPTV</span> Pro Guide</a>
-<nav class="nav"><a href="/${langCode}/">Home</a><a href="/blog/${langCode}/">Blog</a><a href="/${langCode}/categories/" class="active">Categories</a><a href="/${langCode}/about.html">About</a><a href="/${langCode}/contact.html">Contact</a></nav>
+<nav class="nav"><a href="/${langCode}/">${t(langCode, 'nav_home')}</a><a href="/blog/${langCode}/">${t(langCode, 'nav_blog')}</a><a href="/${langCode}/categories/" class="active">${t(langCode, 'nav_categories')}</a><a href="/${langCode}/about.html">${t(langCode, 'nav_about')}</a><a href="/${langCode}/contact.html">${t(langCode, 'nav_contact')}</a></nav>
 <div class="lang-switch">
 ${LANGUAGES.map(l => `<a href="/${l.code}/categories/${cat.slug}.html" data-lang="${l.code}"${l.code === langCode ? ' class="active"' : ''}>${l.flag} ${l.code.toUpperCase()}</a>`).join('\n')}
 </div>
 </div></header>
 <main>
-<section class="page-header"><div class="container"><h1>${cat.icon} ${cat.name}</h1><p>${catArticles.length} articles in ${lang.name}</p></div></section>
+<section class="page-header"><div class="container"><h1>${cat.icon} ${cat.name}</h1><p>${catArticles.length} ${t(langCode, 'blog_subheading', { LANG_NAME: lang.name })}</p></div></section>
 <section class="content-area"><div class="container">
-<div class="article-list">${rows || '<p style="color:#888;padding:20px">Articles coming soon...</p>'}</div>
+<div class="article-list">${rows || `<p style="color:#888;padding:20px">${t(langCode, 'blog_empty')}</p>`}</div>
 </div></section>
 </main>
 <footer class="footer"><div class="container">
 <div class="footer-grid">
-<div><h2>${SITE_NAME}</h2><p>Your trusted source for IPTV guides.</p></div>
-<div><h2>Quick Links</h2><a href="/${langCode}/">Home</a><a href="/blog/${langCode}/">Blog</a><a href="/${langCode}/categories/">Categories</a></div>
-<div><h2>Legal</h2><a href="/${langCode}/privacy-policy.html">Privacy Policy</a><a href="/${langCode}/terms.html">Terms</a><a href="/${langCode}/dmca.html">DMCA</a><a href="/${langCode}/disclaimer.html">Disclaimer</a></div>
+<div><h2>${SITE_NAME}</h2><p>${t(langCode, 'footer_desc')}</p></div>
+<div><h2>${t(langCode, 'footer_quicklinks')}</h2><a href="/${langCode}/">${t(langCode, 'nav_home')}</a><a href="/blog/${langCode}/">${t(langCode, 'nav_blog')}</a><a href="/${langCode}/categories/">${t(langCode, 'nav_categories')}</a></div>
+<div><h2>${t(langCode, 'footer_legal')}</h2><a href="/${langCode}/privacy-policy.html">${t(langCode, 'footer_privacy')}</a><a href="/${langCode}/terms.html">${t(langCode, 'footer_terms')}</a><a href="/${langCode}/dmca.html">${t(langCode, 'footer_dmca')}</a><a href="/${langCode}/disclaimer.html">${t(langCode, 'footer_disclaimer')}</a></div>
 </div>
-<div class="footer-bottom"><p>© 2026 ${SITE_NAME}. All rights reserved.</p></div>
+<div class="footer-bottom"><p>${t(langCode, 'footer_copyright')}</p></div>
 </div></footer>
 <div class="whatsapp-float"><a href="https://wa.me/${WHATSAPP}?text=Hi%21%20I%20need%20help%20with%20IPTV" target="_blank"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.967-.94 1.165-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.93 9.93 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.889 0-3.633-.656-5.008-1.756l-3.4 1.06 1.06-3.4A7.94 7.94 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg></a></div>
-<div class="cookie-consent" id="cookieConsent"><div class="container"><p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p><button class="btn-cookie">Accept</button></div></div>
+<div class="cookie-consent" id="cookieConsent"><div class="container"><p>${t(langCode, 'cookie_text')}</p><button class="btn-cookie">${t(langCode, 'cookie_accept')}</button></div></div>
 <script defer src="/assets/js/main.js"></script>
 </body>
 </html>`;
@@ -896,7 +907,7 @@ function generateCategoriesListing(langCode) {
       <div class="cat-info">
         <h3>${c.name.charAt(0).toUpperCase() + c.name.slice(1).replace(/-/g, ' ')}</h3>
         <p>Articles about ${c.name.replace(/-/g, ' ')}</p>
-        <a href="/${langCode}/categories/${c.slug}.html" class="cat-link">Browse Articles →</a>
+        <a href="/${langCode}/categories/${c.slug}.html" class="cat-link">${t(langCode, 'categories_browse')} →</a>
       </div>
     </div>`).join('');
 
@@ -904,8 +915,8 @@ function generateCategoriesListing(langCode) {
 <html lang="${langCode}" dir="${dir}">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Categories - ${SITE_NAME} (${lang.name})</title>
-<meta name="description" content="Browse IPTV article categories in ${lang.name}">
+<title>${t(langCode, 'categories_title', { LANG_NAME: lang.name })}</title>
+<meta name="description" content="${t(langCode, 'categories_meta_desc', { LANG_NAME: lang.name })}">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="${SITE_URL}/${langCode}/categories/">
 <style>body{font-family:system-ui,-apple-system,sans-serif;background:#0f0f23;color:#e0e0e0;line-height:1.7;margin:0;padding:0}.container{max-width:1200px;margin:0 auto;padding:0 20px}.header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:15px 0;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.05)}.header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}.logo{font-size:28px;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}.logo span{color:#00c853}.nav{display:flex;gap:25px;flex-wrap:wrap}.nav a{color:#ccc;text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;text-transform:uppercase;letter-spacing:1px}.nav a:hover{color:#00c853}.lang-switch{display:flex;gap:5px;flex-wrap:wrap}.lang-switch a{padding:4px 10px;border-radius:4px;font-size:12px;font-weight:600;text-decoration:none;color:#aaa;border:1px solid #333;transition:all .3s}.lang-switch a.active,.lang-switch a:hover{color:#fff;border-color:#00c853;background:rgba(0,200,83,0.1)}.page-header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:50px 0;text-align:center;border-bottom:1px solid rgba(255,255,255,0.05)}.page-header h1{font-size:36px;color:#fff;margin-bottom:10px}.page-header p{color:#888;font-size:16px}.content-area{min-height:400px;padding:40px 0}.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}.cat-card{display:flex;gap:20px;background:linear-gradient(135deg,#1e1e3a,#16213e);border-radius:12px;padding:24px;border:1px solid rgba(255,255,255,0.05);transition:all .3s}.cat-card:hover{transform:translateY(-3px);border-color:rgba(0,200,83,0.2)}.cat-icon{font-size:40px;display:flex;align-items:center}.cat-info h3{color:#fff;font-size:18px;margin:0 0 8px}.cat-info p{color:#888;font-size:13px;margin:0 0 12px}.cat-link{color:#00c853;text-decoration:none;font-size:14px;font-weight:600}.cat-link:hover{text-decoration:underline}.footer{background:#0f0f23;padding:50px 0 20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px}.footer h2{color:#fff;font-size:16px;margin-bottom:15px}.footer p{color:#888;font-size:13px;line-height:1.6}.footer a{display:block;color:#888;text-decoration:none;font-size:13px;margin-bottom:8px;transition:color .3s}.footer a:hover{color:#00c853}.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-bottom p{color:#666;font-size:12px}@media(max-width:768px){.cat-grid{grid-template-columns:1fr}}</style>
@@ -913,27 +924,27 @@ function generateCategoriesListing(langCode) {
 <body>
 <header class="header"><div class="container">
 <a href="/${langCode}/" class="logo">📺 <span>IPTV</span> Pro Guide</a>
-<nav class="nav"><a href="/${langCode}/">Home</a><a href="/blog/${langCode}/">Blog</a><a href="/${langCode}/categories/" class="active">Categories</a><a href="/${langCode}/about.html">About</a><a href="/${langCode}/contact.html">Contact</a></nav>
+<nav class="nav"><a href="/${langCode}/">${t(langCode, 'nav_home')}</a><a href="/blog/${langCode}/">${t(langCode, 'nav_blog')}</a><a href="/${langCode}/categories/" class="active">${t(langCode, 'nav_categories')}</a><a href="/${langCode}/about.html">${t(langCode, 'nav_about')}</a><a href="/${langCode}/contact.html">${t(langCode, 'nav_contact')}</a></nav>
 <div class="lang-switch">
 ${LANGUAGES.map(l => `<a href="/${l.code}/categories/" data-lang="${l.code}"${l.code === langCode ? ' class="active"' : ''}>${l.flag} ${l.code.toUpperCase()}</a>`).join('\n')}
 </div>
 </div></header>
 <main>
-<section class="page-header"><div class="container"><h1>📂 Categories</h1><p>Browse articles by category in ${lang.name}</p></div></section>
+<section class="page-header"><div class="container"><h1>📂 ${t(langCode, 'categories_heading')}</h1><p>${t(langCode, 'categories_subheading', { LANG_NAME: lang.name })}</p></div></section>
 <section class="content-area"><div class="container">
 <div class="cat-grid">${rows}</div>
 </div></section>
 </main>
 <footer class="footer"><div class="container">
 <div class="footer-grid">
-<div><h2>${SITE_NAME}</h2><p>Your trusted source for IPTV guides.</p></div>
-<div><h2>Quick Links</h2><a href="/${langCode}/">Home</a><a href="/blog/${langCode}/">Blog</a><a href="/${langCode}/categories/">Categories</a></div>
-<div><h2>Legal</h2><a href="/${langCode}/privacy-policy.html">Privacy Policy</a><a href="/${langCode}/terms.html">Terms</a><a href="/${langCode}/dmca.html">DMCA</a><a href="/${langCode}/disclaimer.html">Disclaimer</a></div>
+<div><h2>${SITE_NAME}</h2><p>${t(langCode, 'footer_desc')}</p></div>
+<div><h2>${t(langCode, 'footer_quicklinks')}</h2><a href="/${langCode}/">${t(langCode, 'nav_home')}</a><a href="/blog/${langCode}/">${t(langCode, 'nav_blog')}</a><a href="/${langCode}/categories/">${t(langCode, 'nav_categories')}</a></div>
+<div><h2>${t(langCode, 'footer_legal')}</h2><a href="/${langCode}/privacy-policy.html">${t(langCode, 'footer_privacy')}</a><a href="/${langCode}/terms.html">${t(langCode, 'footer_terms')}</a><a href="/${langCode}/dmca.html">${t(langCode, 'footer_dmca')}</a><a href="/${langCode}/disclaimer.html">${t(langCode, 'footer_disclaimer')}</a></div>
 </div>
-<div class="footer-bottom"><p>© 2026 ${SITE_NAME}. All rights reserved.</p></div>
+<div class="footer-bottom"><p>${t(langCode, 'footer_copyright')}</p></div>
 </div></footer>
 <div class="whatsapp-float"><a href="https://wa.me/${WHATSAPP}?text=Hi%21%20I%20need%20help%20with%20IPTV" target="_blank"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.967-.94 1.165-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.93 9.93 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.889 0-3.633-.656-5.008-1.756l-3.4 1.06 1.06-3.4A7.94 7.94 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg></a></div>
-<div class="cookie-consent" id="cookieConsent"><div class="container"><p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p><button class="btn-cookie">Accept</button></div></div>
+<div class="cookie-consent" id="cookieConsent"><div class="container"><p>${t(langCode, 'cookie_text')}</p><button class="btn-cookie">${t(langCode, 'cookie_accept')}</button></div></div>
 <script defer src="/assets/js/main.js"></script>
 </body>
 </html>`;
@@ -946,26 +957,26 @@ function generateSearchPages() {
 <html lang="${lang.code}" dir="${dir}">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Search - ${SITE_NAME} (${lang.name})</title>
-<meta name="description" content="Search articles on ${SITE_NAME} in ${lang.name}">
+<title>${t(lang.code, 'search_meta_title', { LANG_NAME: lang.name })}</title>
+<meta name="description" content="${t(lang.code, 'search_meta_desc', { LANG_NAME: lang.name })}">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="${SITE_URL}/${lang.code}/search.html">
-<style>body{font-family:system-ui,-apple-system,sans-serif;background:#0f0f23;color:#e0e0e0;line-height:1.7;margin:0;padding:0}.container{max-width:900px;margin:0 auto;padding:0 20px}.header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:15px 0;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.05)}.header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}.logo{font-size:28px;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}.logo span{color:#00c853}.nav{display:flex;gap:25px;flex-wrap:wrap}.nav a{color:#ccc;text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;text-transform:uppercase;letter-spacing:1px}.nav a:hover{color:#00c853}.lang-switch{display:flex;gap:5px;flex-wrap:wrap}.lang-switch a{padding:4px 10px;border-radius:4px;font-size:12px;font-weight:600;text-decoration:none;color:#aaa;border:1px solid #333;transition:all .3s}.lang-switch a.active,.lang-switch a:hover{color:#fff;border-color:#00c853;background:rgba(0,200,83,0.1)}.page-header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:50px 0;text-align:center;border-bottom:1px solid rgba(255,255,255,0.05)}.page-header h1{font-size:36px;color:#fff;margin-bottom:10px}.page-header p{color:#888;font-size:16px}.content-area{min-height:400px;padding:40px 0}.search-box{display:flex;gap:10px}.search-box input{flex:1;padding:14px 18px;border-radius:8px;border:1px solid #333;background:#1a1a3e;color:#fff;font-size:16px;outline:none;transition:all .3s}.search-box input:focus{border-color:#00c853}.search-box button{padding:14px 24px;background:#00c853;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:16px;font-weight:600}#results{margin-top:20px;min-height:200px}.result-card{background:linear-gradient(135deg,#1e1e3a,#16213e);border-radius:12px;padding:20px;margin-bottom:15px;border:1px solid rgba(255,255,255,0.05)}.result-card h3{margin:0 0 8px}.result-card h3 a{color:#fff;text-decoration:none;font-size:18px}.result-card h3 a:hover{color:#00c853}.result-card .excerpt{color:#999;font-size:13px;margin-bottom:8px;line-height:1.6}.result-card .meta{color:#666;font-size:12px;margin-bottom:5px}.result-card .category{display:inline-block;padding:2px 10px;background:rgba(0,200,83,0.15);color:#00c853;border-radius:20px;font-size:11px;font-weight:600}.no-results{text-align:center;padding:40px;color:#888}.pagination{display:flex;gap:10px;justify-content:center;margin-top:30px;flex-wrap:wrap}.pagination a{padding:8px 16px;background:#1e1e3a;color:#00c853;border-radius:6px;text-decoration:none;font-size:14px;transition:all .3s}.pagination a.active,.pagination a:hover{background:#00c853;color:#fff}.footer{background:#0f0f23;padding:50px 0 20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px}.footer h2{color:#fff;font-size:16px;margin-bottom:15px}.footer p{color:#888;font-size:13px;line-height:1.6}.footer a{display:block;color:#888;text-decoration:none;font-size:13px;margin-bottom:8px;transition:color .3s}.footer a:hover{color:#00c853}.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-bottom p{color:#666;font-size:12px}.cookie-consent{position:fixed;bottom:0;left:0;right:0;background:#1a1a3e;padding:15px 0;z-index:9999;display:none;border-top:1px solid rgba(255,255,255,0.1)}.cookie-consent.show{display:block}.cookie-consent .container{display:flex;align-items:center;justify-content:space-between;gap:20px}.cookie-consent p{color:#aaa;font-size:13px;margin:0}.btn-cookie{padding:8px 24px;background:#00c853;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:600;white-space:nowrap}@media(max-width:768px){.search-box{flex-direction:column}}</style>
+<style>body{font-family:system-ui,-apple-system,sans-serif;background:#0f0f23;color:#e0e0e0;line-height:1.7;margin:0;padding:0}.container{max-width:900px;margin:0 auto;padding:0 20px}.header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:15px 0;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.05)}.header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}.logo{font-size:28px;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}.logo span{color:#00c853}.nav{display:flex;gap:25px;flex-wrap:wrap}.nav a{color:#ccc;text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;text-transform:uppercase;letter-spacing:1px}.nav a:hover{color:#00c853}.lang-switch{display:flex;gap:5px;flex-wrap:wrap}.lang-switch a{padding:4px 10px;border-radius:4px;font-size:12px;font-weight:600;text-decoration:none;color:#aaa;border:1px solid #333;transition:all .3s}.lang-switch a.active,.lang-switch a:hover{color:#fff;border-color:#00c853;background:rgba(0,200,83,0.1)}.page-header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:50px 0;text-align:center;border-bottom:1px solid rgba(255,255,255,0.05)}.page-header h1{font-size:36px;color:#fff;margin-bottom:10px}.page-header p{color:#888;font-size:16px}.content-area{min-height:400px;padding:40px 0}.search-box{display:flex;gap:10px}.search-box input{flex:1;padding:14px 18px;border-radius:8px;border:1px solid #333;background:#1a1a3e;color:#fff;font-size:16px;outline:none;transition:all .3s}.search-box input:focus{border-color:#00c853}.search-box button{padding:14px 24px;background:#00c853;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:16px;font-weight:600}#results{margin-top:20px;min-height:200px}.result-card{background:linear-gradient(135deg,#1e1e3a,#16213e);border-radius:12px;padding:20px;margin-bottom:15px;border:1px solid rgba(255,255,255,0.05)}.result-card h3{margin:0 0 8px}.result-card h3 a{color:#fff;text-decoration:none;font-size:18px}.result-card h3 a:hover{color:#00c853}.result-card .excerpt{color:#999;font-size:13px;margin-bottom:8px;line-height:1.6}.result-card .meta{color:#666;font-size:12px;margin-bottom:5px}.result-card .category{display:inline-block;padding:2px 10px;background:rgba(0,200,83,0.15);color:#00c853;border-radius:20px;font-size:11px;font-weight:600}.no-results{text-align:center;padding:40px;color:#888}.pagination{display:flex;gap:10px;justify-content:center;margin-top:30px;flex-wrap:wrap}.pagination a{padding:8px 16px;background:#1e1e3a;color:#00c853;border-radius:6px;text-decoration:none;font-size:14px;transition:all .3s}.pagination a.active,.pagination a:hover{background:#00c853;color:#fff}.footer{background:#0f0f23;padding:50px 0 20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px}.footer h2{color:#fff;font-size:16px;margin-bottom:15px}.footer p{color:#888;font-size:13px;line-height:1.6}.footer a{display:block;color:#888;text-decoration:none;font-size:13px;margin-bottom:8px;transition:color .3s}.footer a:hover{color:#00c853}.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-bottom p{color:#666;font-size:12px}.cookie-consent{position:fixed;bottom:0;left:0;right:0;background:#1a1a3e;padding:15px 80px 15px 20px;z-index:99999;display:none;border-top:1px solid rgba(255,255,255,0.1)}.cookie-consent.show{display:block}.cookie-consent .container{display:flex;align-items:center;justify-content:space-between;gap:20px}.cookie-consent p{color:#aaa;font-size:13px;margin:0}.btn-cookie{padding:8px 24px;background:#00c853;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:600;white-space:nowrap;pointer-events:auto;position:relative;z-index:99999}@media(max-width:768px){.search-box{flex-direction:column}}</style>
 </head>
 <body>
 <header class="header"><div class="container">
 <a href="/${lang.code}/" class="logo">📺 <span>IPTV</span> Pro Guide</a>
-<nav class="nav"><a href="/${lang.code}/">Home</a><a href="/blog/${lang.code}/">Blog</a><a href="/${lang.code}/categories/">Categories</a><a href="/${lang.code}/about.html">About</a><a href="/${lang.code}/contact.html">Contact</a></nav>
+<nav class="nav"><a href="/${lang.code}/">${t(lang.code, 'nav_home')}</a><a href="/blog/${lang.code}/">${t(lang.code, 'nav_blog')}</a><a href="/${lang.code}/categories/">${t(lang.code, 'nav_categories')}</a><a href="/${lang.code}/about.html">${t(lang.code, 'nav_about')}</a><a href="/${lang.code}/contact.html">${t(lang.code, 'nav_contact')}</a></nav>
 <div class="lang-switch">
 ${LANGUAGES.map(l => `<a href="/${l.code}/search.html" data-lang="${l.code}"${l.code === lang.code ? ' class="active"' : ''}>${l.flag} ${l.code.toUpperCase()}</a>`).join('\n')}
 </div>
 </div></header>
 <main>
-<section class="page-header"><div class="container"><h1>🔍 Search</h1><p>Search articles in ${lang.name}</p></div></section>
+<section class="page-header"><div class="container"><h1>🔍 ${t(lang.code, 'search_title')}</h1><p>${t(lang.code, 'search_subtitle', { LANG_NAME: lang.name })}</p></div></section>
 <section class="content-area"><div class="container">
 <div class="search-box">
-<input type="text" id="searchInput" placeholder="Search IPTV articles..." autocomplete="off">
-<button onclick="searchArticles()">🔍 Search</button>
+<input type="text" id="searchInput" placeholder="${t(lang.code, 'search_placeholder')}" autocomplete="off">
+<button onclick="searchArticles()">🔍 ${t(lang.code, 'search_btn')}</button>
 </div>
 <div id="results"></div>
 <div class="pagination" id="pagination"></div>
@@ -973,14 +984,14 @@ ${LANGUAGES.map(l => `<a href="/${l.code}/search.html" data-lang="${l.code}"${l.
 </main>
 <footer class="footer"><div class="container">
 <div class="footer-grid">
-<div><h2>${SITE_NAME}</h2><p>Your trusted source for IPTV guides.</p></div>
-<div><h2>Quick Links</h2><a href="/${lang.code}/">Home</a><a href="/blog/${lang.code}/">Blog</a><a href="/${lang.code}/categories/">Categories</a></div>
-<div><h2>Legal</h2><a href="/${lang.code}/privacy-policy.html">Privacy Policy</a><a href="/${lang.code}/terms.html">Terms</a><a href="/${lang.code}/dmca.html">DMCA</a><a href="/${lang.code}/disclaimer.html">Disclaimer</a></div>
+<div><h2>${SITE_NAME}</h2><p>${t(lang.code, 'footer_desc')}</p></div>
+<div><h2>${t(lang.code, 'footer_quicklinks')}</h2><a href="/${lang.code}/">${t(lang.code, 'nav_home')}</a><a href="/blog/${lang.code}/">${t(lang.code, 'nav_blog')}</a><a href="/${lang.code}/categories/">${t(lang.code, 'nav_categories')}</a></div>
+<div><h2>${t(lang.code, 'footer_legal')}</h2><a href="/${lang.code}/privacy-policy.html">${t(lang.code, 'footer_privacy')}</a><a href="/${lang.code}/terms.html">${t(lang.code, 'footer_terms')}</a><a href="/${lang.code}/dmca.html">${t(lang.code, 'footer_dmca')}</a><a href="/${lang.code}/disclaimer.html">${t(lang.code, 'footer_disclaimer')}</a></div>
 </div>
-<div class="footer-bottom"><p>© 2026 ${SITE_NAME}. All rights reserved.</p></div>
+<div class="footer-bottom"><p>${t(lang.code, 'footer_copyright')}</p></div>
 </div></footer>
 <div class="whatsapp-float"><a href="https://wa.me/${WHATSAPP}?text=Hi%21%20I%20need%20help%20with%20IPTV" target="_blank"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.967-.94 1.165-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.93 9.93 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.889 0-3.633-.656-5.008-1.756l-3.4 1.06 1.06-3.4A7.94 7.94 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg></a></div>
-<div class="cookie-consent" id="cookieConsent"><div class="container"><p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p><button class="btn-cookie">Accept</button></div></div>
+<div class="cookie-consent" id="cookieConsent"><div class="container"><p>${t(lang.code, 'cookie_text')}</p><button class="btn-cookie">${t(lang.code, 'cookie_accept')}</button></div></div>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
 <script defer src="/assets/js/main.js"></script>
 </body>
@@ -1345,7 +1356,7 @@ function generateStaticPages() {
 <html lang="${lang.code}" dir="${dir}">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>${page.title} - ${SITE_NAME}</title>
+<title>${t(lang.code, 'static_' + filename.replace('.html', '') + '_title', { LANG_NAME: lang.name })}</title>
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="${SITE_URL}/${lang.code}/${filename}">
 <style>body{font-family:system-ui,-apple-system,sans-serif;background:#0f0f23;color:#e0e0e0;line-height:1.7;margin:0;padding:0}.container{max-width:800px;margin:0 auto;padding:0 20px}.header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:15px 0;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.05)}.header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}.logo{font-size:28px;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}.logo span{color:#00c853}.nav{display:flex;gap:25px;flex-wrap:wrap}.nav a{color:#ccc;text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;text-transform:uppercase;letter-spacing:1px}.nav a:hover{color:#00c853}.lang-switch{display:flex;gap:5px;flex-wrap:wrap}.lang-switch a{padding:4px 10px;border-radius:4px;font-size:12px;font-weight:600;text-decoration:none;color:#aaa;border:1px solid #333;transition:all .3s}.lang-switch a.active,.lang-switch a:hover{color:#fff;border-color:#00c853;background:rgba(0,200,83,0.1)}.page-header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:50px 0;text-align:center;border-bottom:1px solid rgba(255,255,255,0.05)}.page-header h1{font-size:36px;color:#fff;margin-bottom:10px}.content-area{min-height:400px;padding:40px 0}.content-area h2{color:#fff;font-size:22px;margin:30px 0 15px}.content-area p{color:#bbb;margin-bottom:15px;font-size:16px;line-height:1.8}.content-area ul{color:#bbb;margin-bottom:15px;padding-left:20px}.content-area li{margin-bottom:8px}.footer{background:#0f0f23;padding:50px 0 20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px}.footer h2{color:#fff;font-size:16px;margin-bottom:15px}.footer p{color:#888;font-size:13px}.footer a{display:block;color:#888;text-decoration:none;font-size:13px;margin-bottom:8px}.footer a:hover{color:#00c853}.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-bottom p{color:#666;font-size:12px}</style>
@@ -1353,24 +1364,24 @@ function generateStaticPages() {
 <body>
 <header class="header"><div class="container">
 <a href="/${lang.code}/" class="logo">📺 <span>IPTV</span> Pro Guide</a>
-<nav class="nav"><a href="/${lang.code}/">Home</a><a href="/blog/${lang.code}/">Blog</a><a href="/${lang.code}/categories/">Categories</a><a href="/${lang.code}/about.html">About</a><a href="/${lang.code}/contact.html">Contact</a></nav>
+<nav class="nav"><a href="/${lang.code}/">${t(lang.code, 'nav_home')}</a><a href="/blog/${lang.code}/">${t(lang.code, 'nav_blog')}</a><a href="/${lang.code}/categories/">${t(lang.code, 'nav_categories')}</a><a href="/${lang.code}/about.html">${t(lang.code, 'nav_about')}</a><a href="/${lang.code}/contact.html">${t(lang.code, 'nav_contact')}</a></nav>
 <div class="lang-switch">
 ${LANGUAGES.map(l => `<a href="/${l.code}/${filename}" data-lang="${l.code}"${l.code === lang.code ? ' class="active"' : ''}>${l.flag} ${l.code.toUpperCase()}</a>`).join('\n')}
 </div>
 </div></header>
 <main>
-<section class="page-header"><div class="container"><h1>${page.heading}</h1></div></section>
+<section class="page-header"><div class="container"><h1>${t(lang.code, 'static_' + filename.replace('.html', '') + '_heading', { LANG_NAME: lang.name })}</h1></div></section>
 <section class="content-area"><div class="container">${page.content}</div></section>
 </main>
 <footer class="footer"><div class="container">
 <div class="footer-grid">
-<div><h2>${SITE_NAME}</h2><p>Your trusted source for IPTV guides.</p></div>
-<div><h2>Quick Links</h2><a href="/${lang.code}/">Home</a><a href="/blog/${lang.code}/">Blog</a><a href="/${lang.code}/categories/">Categories</a></div>
-<div><h2>Legal</h2><a href="/${lang.code}/privacy-policy.html">Privacy Policy</a><a href="/${lang.code}/terms.html">Terms</a><a href="/${lang.code}/dmca.html">DMCA</a><a href="/${lang.code}/disclaimer.html">Disclaimer</a></div>
+<div><h2>${SITE_NAME}</h2><p>${t(lang.code, 'footer_desc')}</p></div>
+<div><h2>${t(lang.code, 'footer_quicklinks')}</h2><a href="/${lang.code}/">${t(lang.code, 'nav_home')}</a><a href="/blog/${lang.code}/">${t(lang.code, 'nav_blog')}</a><a href="/${lang.code}/categories/">${t(lang.code, 'nav_categories')}</a></div>
+<div><h2>${t(lang.code, 'footer_legal')}</h2><a href="/${lang.code}/privacy-policy.html">${t(lang.code, 'footer_privacy')}</a><a href="/${lang.code}/terms.html">${t(lang.code, 'footer_terms')}</a><a href="/${lang.code}/dmca.html">${t(lang.code, 'footer_dmca')}</a><a href="/${lang.code}/disclaimer.html">${t(lang.code, 'footer_disclaimer')}</a></div>
 </div>
-<div class="footer-bottom"><p>© 2026 ${SITE_NAME}. All rights reserved.</p></div>
+<div class="footer-bottom"><p>${t(lang.code, 'footer_copyright')}</p></div>
 </div></footer>
-<div class="cookie-consent" id="cookieConsent"><div class="container"><p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p><button class="btn-cookie">Accept</button></div></div>
+<div class="cookie-consent" id="cookieConsent"><div class="container"><p>${t(lang.code, 'cookie_text')}</p><button class="btn-cookie">${t(lang.code, 'cookie_accept')}</button></div></div>
 <script defer src="/assets/js/main.js"></script>
 </body>
 </html>`;
