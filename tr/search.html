@@ -6,12 +6,15 @@
 <meta name="description" content="IPTV Pro Guide'da Türkçe dilinde makale ara">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://iptvproguide.netlify.app/tr/search.html">
-<style>body{font-family:system-ui,-apple-system,sans-serif;background:#0f0f23;color:#e0e0e0;line-height:1.7;margin:0;padding:0}.container{max-width:900px;margin:0 auto;padding:0 20px}.header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:15px 0;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.05)}.header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}.logo{font-size:28px;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}.logo span{color:#00c853}.nav{display:flex;gap:25px;flex-wrap:wrap}.nav a{color:#ccc;text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;text-transform:uppercase;letter-spacing:1px}.nav a:hover{color:#00c853}.lang-switch{display:flex;gap:5px;flex-wrap:wrap}.lang-switch a{padding:4px 10px;border-radius:4px;font-size:12px;font-weight:600;text-decoration:none;color:#aaa;border:1px solid #333;transition:all .3s}.lang-switch a.active,.lang-switch a:hover{color:#fff;border-color:#00c853;background:rgba(0,200,83,0.1)}.page-header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:50px 0;text-align:center;border-bottom:1px solid rgba(255,255,255,0.05)}.page-header h1{font-size:36px;color:#fff;margin-bottom:10px}.page-header p{color:#888;font-size:16px}.content-area{min-height:400px;padding:40px 0}.search-box{display:flex;gap:10px}.search-box input{flex:1;padding:14px 18px;border-radius:8px;border:1px solid #333;background:#1a1a3e;color:#fff;font-size:16px;outline:none;transition:all .3s}.search-box input:focus{border-color:#00c853}.search-box button{padding:14px 24px;background:#00c853;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:16px;font-weight:600}#results{margin-top:20px;min-height:200px}.result-card{background:linear-gradient(135deg,#1e1e3a,#16213e);border-radius:12px;padding:20px;margin-bottom:15px;border:1px solid rgba(255,255,255,0.05)}.result-card h3{margin:0 0 8px}.result-card h3 a{color:#fff;text-decoration:none;font-size:18px}.result-card h3 a:hover{color:#00c853}.result-card .excerpt{color:#999;font-size:13px;margin-bottom:8px;line-height:1.6}.result-card .meta{color:#666;font-size:12px;margin-bottom:5px}.result-card .category{display:inline-block;padding:2px 10px;background:rgba(0,200,83,0.15);color:#00c853;border-radius:20px;font-size:11px;font-weight:600}.no-results{text-align:center;padding:40px;color:#888}.pagination{display:flex;gap:10px;justify-content:center;margin-top:30px;flex-wrap:wrap}.pagination a{padding:8px 16px;background:#1e1e3a;color:#00c853;border-radius:6px;text-decoration:none;font-size:14px;transition:all .3s}.pagination a.active,.pagination a:hover{background:#00c853;color:#fff}.footer{background:#0f0f23;padding:50px 0 20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px}.footer h2{color:#fff;font-size:16px;margin-bottom:15px}.footer p{color:#888;font-size:13px;line-height:1.6}.footer a{display:block;color:#888;text-decoration:none;font-size:13px;margin-bottom:8px;transition:color .3s}.footer a:hover{color:#00c853}.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-bottom p{color:#666;font-size:12px}.cookie-consent{position:fixed;bottom:0;left:0;right:0;background:#1a1a3e;padding:15px 80px 15px 20px;z-index:99999;display:none;border-top:1px solid rgba(255,255,255,0.1)}.cookie-consent.show{display:block}.cookie-consent .container{display:flex;align-items:center;justify-content:space-between;gap:20px}.cookie-consent p{color:#aaa;font-size:13px;margin:0}.btn-cookie{padding:8px 24px;background:#00c853;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:600;white-space:nowrap;pointer-events:auto;position:relative;z-index:99999}@media(max-width:768px){.search-box{flex-direction:column}}</style>
+<link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
 <header class="header"><div class="container">
 <a href="/tr/" class="logo">📺 <span>IPTV</span> Pro Guide</a>
 <nav class="nav"><a href="/tr/">Ana Sayfa</a><a href="/blog/tr/">Blog</a><a href="/tr/categories/">Kategoriler</a><a href="/tr/about.html">Hakkında</a><a href="/tr/contact.html">İletişim</a></nav>
+<div class="header-actions">
+<button class="header-search-btn" onclick="openSearch()" aria-label="Search">🔍</button>
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
 <div class="lang-switch">
 <a href="/en/search.html" data-lang="en">🇬🇧 EN</a>
 <a href="/fr/search.html" data-lang="fr">🇫🇷 FR</a>
@@ -24,7 +27,42 @@
 <a href="/ru/search.html" data-lang="ru">🇷🇺 RU</a>
 <a href="/nl/search.html" data-lang="nl">🇳🇱 NL</a>
 </div>
+<button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+</div>
 </div></header>
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+<nav class="mobile-nav" id="mobileNav">
+<div class="nav">
+<a href="/tr/">Ana Sayfa</a>
+<a href="/blog/tr/">Blog</a>
+<a href="/tr/categories/">Kategoriler</a>
+<a href="/tr/about.html">Hakkında</a>
+<a href="/tr/contact.html">İletişim</a>
+</div>
+<div class="lang-switch">
+<a href="/en/search.html" data-lang="en">🇬🇧 English</a>
+<a href="/fr/search.html" data-lang="fr">🇫🇷 Français</a>
+<a href="/es/search.html" data-lang="es">🇪🇸 Español</a>
+<a href="/ar/search.html" data-lang="ar">🇸🇦 العربية</a>
+<a href="/de/search.html" data-lang="de">🇩🇪 Deutsch</a>
+<a href="/pt/search.html" data-lang="pt">🇧🇷 Português</a>
+<a href="/it/search.html" data-lang="it">🇮🇹 Italiano</a>
+<a href="/tr/search.html" data-lang="tr" class="active">🇹🇷 Türkçe</a>
+<a href="/ru/search.html" data-lang="ru">🇷🇺 Русский</a>
+<a href="/nl/search.html" data-lang="nl">🇳🇱 Nederlands</a>
+</div>
+</nav>
+<div class="search-overlay" id="searchOverlay">
+<div class="search-overlay-content">
+<button class="search-overlay-close" onclick="closeSearch()">&times;</button>
+<h3 style="color:var(--text-primary);font-size:18px;font-weight:700;">🔍 Arama</h3>
+<input type="text" id="searchOverlayInput" placeholder="IPTV makalelerinde ara..." autocomplete="off">
+<div class="search-overlay-results" id="searchOverlayResults"></div>
+</div>
+</div>
+<div class="reading-progress" id="readingProgress"></div>
 <main>
 <section class="page-header"><div class="container"><h1>🔍 Arama</h1><p>Türkçe dilinde makale ara</p></div></section>
 <section class="content-area"><div class="container">

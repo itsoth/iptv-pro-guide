@@ -5,12 +5,15 @@
 <title>static_privacy-policy_title</title>
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://iptvproguide.netlify.app/it/privacy-policy.html">
-<style>body{font-family:system-ui,-apple-system,sans-serif;background:#0f0f23;color:#e0e0e0;line-height:1.7;margin:0;padding:0}.container{max-width:800px;margin:0 auto;padding:0 20px}.header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:15px 0;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.05)}.header .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}.logo{font-size:28px;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}.logo span{color:#00c853}.nav{display:flex;gap:25px;flex-wrap:wrap}.nav a{color:#ccc;text-decoration:none;font-size:14px;font-weight:500;transition:color .3s;text-transform:uppercase;letter-spacing:1px}.nav a:hover{color:#00c853}.lang-switch{display:flex;gap:5px;flex-wrap:wrap}.lang-switch a{padding:4px 10px;border-radius:4px;font-size:12px;font-weight:600;text-decoration:none;color:#aaa;border:1px solid #333;transition:all .3s}.lang-switch a.active,.lang-switch a:hover{color:#fff;border-color:#00c853;background:rgba(0,200,83,0.1)}.page-header{background:linear-gradient(135deg,#0f0f23,#16213e);padding:50px 0;text-align:center;border-bottom:1px solid rgba(255,255,255,0.05)}.page-header h1{font-size:36px;color:#fff;margin-bottom:10px}.content-area{min-height:400px;padding:40px 0}.content-area h2{color:#fff;font-size:22px;margin:30px 0 15px}.content-area p{color:#bbb;margin-bottom:15px;font-size:16px;line-height:1.8}.content-area ul{color:#bbb;margin-bottom:15px;padding-left:20px}.content-area li{margin-bottom:8px}.footer{background:#0f0f23;padding:50px 0 20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px}.footer h2{color:#fff;font-size:16px;margin-bottom:15px}.footer p{color:#888;font-size:13px}.footer a{display:block;color:#888;text-decoration:none;font-size:13px;margin-bottom:8px}.footer a:hover{color:#00c853}.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05)}.footer-bottom p{color:#666;font-size:12px}</style>
+<link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
 <header class="header"><div class="container">
 <a href="/it/" class="logo">📺 <span>IPTV</span> Pro Guide</a>
 <nav class="nav"><a href="/it/">Home</a><a href="/blog/it/">Blog</a><a href="/it/categories/">Categorie</a><a href="/it/about.html">Chi siamo</a><a href="/it/contact.html">Contatti</a></nav>
+<div class="header-actions">
+<button class="header-search-btn" onclick="openSearch()" aria-label="Search">🔍</button>
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
 <div class="lang-switch">
 <a href="/en/privacy-policy.html" data-lang="en">🇬🇧 EN</a>
 <a href="/fr/privacy-policy.html" data-lang="fr">🇫🇷 FR</a>
@@ -23,7 +26,42 @@
 <a href="/ru/privacy-policy.html" data-lang="ru">🇷🇺 RU</a>
 <a href="/nl/privacy-policy.html" data-lang="nl">🇳🇱 NL</a>
 </div>
+<button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+</div>
 </div></header>
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+<nav class="mobile-nav" id="mobileNav">
+<div class="nav">
+<a href="/it/">Home</a>
+<a href="/blog/it/">Blog</a>
+<a href="/it/categories/">Categorie</a>
+<a href="/it/about.html">Chi siamo</a>
+<a href="/it/contact.html">Contatti</a>
+</div>
+<div class="lang-switch">
+<a href="/en/privacy-policy.html" data-lang="en">🇬🇧 English</a>
+<a href="/fr/privacy-policy.html" data-lang="fr">🇫🇷 Français</a>
+<a href="/es/privacy-policy.html" data-lang="es">🇪🇸 Español</a>
+<a href="/ar/privacy-policy.html" data-lang="ar">🇸🇦 العربية</a>
+<a href="/de/privacy-policy.html" data-lang="de">🇩🇪 Deutsch</a>
+<a href="/pt/privacy-policy.html" data-lang="pt">🇧🇷 Português</a>
+<a href="/it/privacy-policy.html" data-lang="it" class="active">🇮🇹 Italiano</a>
+<a href="/tr/privacy-policy.html" data-lang="tr">🇹🇷 Türkçe</a>
+<a href="/ru/privacy-policy.html" data-lang="ru">🇷🇺 Русский</a>
+<a href="/nl/privacy-policy.html" data-lang="nl">🇳🇱 Nederlands</a>
+</div>
+</nav>
+<div class="search-overlay" id="searchOverlay">
+<div class="search-overlay-content">
+<button class="search-overlay-close" onclick="closeSearch()">&times;</button>
+<h3 style="color:var(--text-primary);font-size:18px;font-weight:700;">🔍 Cerca</h3>
+<input type="text" id="searchOverlayInput" placeholder="Cerca articoli IPTV..." autocomplete="off">
+<div class="search-overlay-results" id="searchOverlayResults"></div>
+</div>
+</div>
+<div class="reading-progress" id="readingProgress"></div>
 <main>
 <section class="page-header"><div class="container"><h1>static_privacy-policy_heading</h1></div></section>
 <section class="content-area"><div class="container">

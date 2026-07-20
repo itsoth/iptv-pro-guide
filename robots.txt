@@ -1,21 +1,41 @@
+# IPTV Pro Guide - Robots.txt
 User-agent: *
 Allow: /
+Disallow: /assets/
+Disallow: /search
 Disallow: /search.html
 
-# AI crawlers
-User-agent: GPTBot
+Sitemap: https://iptvproguide.netlify.app/sitemap.xml
+Crawl-delay: 1
+
+User-agent: Googlebot
 Allow: /
+Disallow: /assets/
+Disallow: /search
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Disallow: /assets/
+Disallow: /search
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
 
 User-agent: Claude-Web
-Allow: /
+Disallow: /
 
-User-agent: PerplexityBot
-Allow: /
+User-agent: ImagesiftBot
+Disallow: /
 
-User-agent: Google-Extended
-Allow: /
-
-Sitemap: https://iptvproguide.netlify.app/sitemap.xml
 Sitemap: https://iptvproguide.netlify.app/rss-en.xml
 Sitemap: https://iptvproguide.netlify.app/rss-fr.xml
 Sitemap: https://iptvproguide.netlify.app/rss-es.xml
