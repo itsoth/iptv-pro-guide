@@ -1,0 +1,74 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "build-agent",
+  "agent": {
+    "build-agent": {
+      "description": "Primary agent for building, deploying, and fixing the IPTV Next.js blog",
+      "mode": "primary",
+      "model": "anthropic/claude-sonnet-4-6"
+    },
+    "seo-agent": {
+      "description": "SEO specialist — structured data, meta tags, hreflang, sitemaps, canonical URLs, Open Graph",
+      "mode": "subagent",
+      "model": "anthropic/claude-sonnet-4-6",
+      "permission": {
+        "edit": "allow",
+        "bash": "allow",
+        "read": "allow"
+      }
+    },
+    "content-agent": {
+      "description": "Content strategist — article generation, translation quality, keyword clustering, internal linking",
+      "mode": "subagent",
+      "model": "anthropic/claude-sonnet-4-6",
+      "permission": {
+        "edit": "allow",
+        "bash": "allow",
+        "read": "allow"
+      }
+    },
+    "monitor-agent": {
+      "description": "Monitoring & performance — Core Web Vitals, broken links, 404 audits, bundle analysis",
+      "mode": "subagent",
+      "model": "anthropic/claude-sonnet-4-6",
+      "permission": {
+        "edit": "allow",
+        "bash": "allow",
+        "read": "allow"
+      }
+    }
+  },
+  "command": {
+    "build": {
+      "description": "Build the Next.js project with static export",
+      "agent": "build-agent"
+    },
+    "audit": {
+      "description": "Run a full site audit: SEO, performance, broken links, meta tags",
+      "agent": "monitor-agent"
+    },
+    "seo": {
+      "description": "Run SEO analysis on the site — check structured data, hreflang, meta tags, headings",
+      "agent": "seo-agent"
+    },
+    "deploy": {
+      "description": "Build and deploy to Netlify",
+      "agent": "build-agent"
+    }
+  },
+  "mcp": {
+    "playwright": {
+      "type": "local",
+      "command": ["npx", "-y", "@playwright/mcp@latest"],
+      "enabled": true
+    }
+  },
+  "skills": {
+    "paths": [".opencode/skills"]
+  },
+  "lsp": true,
+
+  "experimental": {
+    "primary_tools": ["read", "edit", "glob", "grep", "bash", "task", "todowrite", "webfetch", "websearch"]
+  }
+}
