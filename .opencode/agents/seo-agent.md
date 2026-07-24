@@ -1,7 +1,7 @@
 ---
 description: SEO specialist — structured data, meta tags, hreflang, sitemaps, canonical URLs, Open Graph
 mode: subagent
-model: anthropic/claude-sonnet-4-6
+model: opencode/nemotron-3-ultra-free
 permission:
   edit: allow
   bash: allow

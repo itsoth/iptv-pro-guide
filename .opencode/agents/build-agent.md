@@ -1,7 +1,7 @@
 ---
 description: Primary agent for building, deploying, and fixing the IPTV Next.js blog
 mode: primary
-model: anthropic/claude-sonnet-4-6
+model: opencode/deepseek-v4-flash-free
 permission:
   edit: allow
   bash: allow

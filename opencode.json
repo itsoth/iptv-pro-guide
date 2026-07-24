@@ -5,12 +5,12 @@
     "build-agent": {
       "description": "Primary agent for building, deploying, and fixing the IPTV Next.js blog",
       "mode": "primary",
-      "model": "anthropic/claude-sonnet-4-6"
+      "model": "opencode/deepseek-v4-flash-free"
     },
     "seo-agent": {
       "description": "SEO specialist — structured data, meta tags, hreflang, sitemaps, canonical URLs, Open Graph",
       "mode": "subagent",
-      "model": "anthropic/claude-sonnet-4-6",
+      "model": "opencode/nemotron-3-ultra-free",
       "permission": {
         "edit": "allow",
         "bash": "allow",
@@ -20,7 +20,7 @@
     "content-agent": {
       "description": "Content strategist — article generation, translation quality, keyword clustering, internal linking",
       "mode": "subagent",
-      "model": "anthropic/claude-sonnet-4-6",
+      "model": "opencode/laguna-s-2.1-free",
       "permission": {
         "edit": "allow",
         "bash": "allow",
@@ -30,7 +30,7 @@
     "monitor-agent": {
       "description": "Monitoring & performance — Core Web Vitals, broken links, 404 audits, bundle analysis",
       "mode": "subagent",
-      "model": "anthropic/claude-sonnet-4-6",
+      "model": "opencode/north-mini-code-free",
       "permission": {
         "edit": "allow",
         "bash": "allow",

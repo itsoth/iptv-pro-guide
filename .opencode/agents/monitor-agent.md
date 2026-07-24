@@ -1,7 +1,7 @@
 ---
 description: Monitoring & performance — Core Web Vitals, broken links, 404 audits, bundle analysis
 mode: subagent
-model: anthropic/claude-sonnet-4-6
+model: opencode/north-mini-code-free
 permission:
   edit: allow
   bash: allow

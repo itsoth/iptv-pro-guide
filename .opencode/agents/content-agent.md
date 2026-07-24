@@ -1,7 +1,7 @@
 ---
 description: Content strategist — article generation, translation quality, keyword clustering, internal linking
 mode: subagent
-model: anthropic/claude-sonnet-4-6
+model: opencode/laguna-s-2.1-free
 permission:
   edit: allow
   bash: allow
