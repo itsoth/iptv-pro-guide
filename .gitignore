@@ -21,3 +21,22 @@ desktop.ini
 # Temp
 *.tmp
 *.log
+
+# Next.js
+.next/
+out/
+
+# Generated static files
+en/
+fr/
+es/
+ar/
+de/
+pt/
+it/
+tr/
+ru/
+nl/
+blog/
+sitemap.xml
+rss-*.xml
